@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio Ambrozio</title>
+    <meta name="description" content="Technology executive. AI, data, transformation.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #ffffff;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 30px 120px;
+        }
+        
+        /* Header */
+        .header {
+            margin-bottom: 60px;
+        }
+        
+        .name {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        
+        .title {
+            font-size: 20px;
+            color: #666;
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+        
+        .bio {
+            font-size: 18px;
+            line-height: 1.75;
+            color: #444;
+            margin-bottom: 32px;
+        }
+        
+        .links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 16px;
+        }
+        
+        .links a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .links a:hover {
+            color: #004499;
+        }
+        
+        /* Section */
+        .section {
+            margin-bottom: 64px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #000;
+            letter-spacing: -0.3px;
+        }
+        
+        /* Current */
+        .current {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 20px;
+        }
+        
+        .current:last-child {
+            border-bottom: none;
+        }
+        
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .company {
+            font-size: 19px;
+            font-weight: 600;
+            color: #000;
+        }
+        
+        .date {
+            font-size: 15px;
+            color: #888;
+            white-space: nowrap;
+        }
+        
+        .position {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 12px;
+        }
+        
+        .description {
+            font-size: 16px;
+            line-height: 1.65;
+            color: #666;
+        }
+        
+        /* Speaking */
+        .event {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .event:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .event-title {
+            font-size: 17px;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        
+        .event-meta {
+            font-size: 15px;
+            color: #888;
+            line-height: 1.5;
+        }
+        
+        .upcoming {
+            display: inline-block;
+            font-size: 13px;
+            color: #0066cc;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        /* Education */
+        .edu-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .edu-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .edu-degree {
+            font-size: 17px;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 4px;
+        }
+        
+        .edu-school {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 2px;
+        }
+        
+        .edu-year {
+            font-size: 15px;
+            color: #999;
+        }
+        
+        .highlight-edu {
+            background: #f8f9fa;
+            padding: 16px;
+            margin: -16px;
+            border-radius: 6px;
+            border-left: 3px solid #0066cc;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 15px;
+            color: #888;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 50px 24px 80px;
+            }
+            
+            .name {
+                font-size: 36px;
+            }
+            
+            .title {
+                font-size: 18px;
+            }
+            
+            .role-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        /* Subtle animations */
+        a {
+            transition: all 0.2s ease;
+        }
+        
+        ::selection {
+            background: #0066cc;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name">Sergio Ambrozio</h1>
+            <div class="title">Technology executive. AI, data, transformation.</div>
+            <div class="bio">
+                I lead digital and AI strategy for Syngenta's $14B Crop Protection Marketing division, 
+                where I architect transformation roadmaps and build capabilities across 120+ countries. 
+                Previously scaled B2B platforms, led enterprise integrations, and managed commercial operations 
+                at Mars and Nestlé. Based in Basel, exploring CIO opportunities.
+            </div>
+            <div class="links">
+                <a href="mailto:sergiomoriya@gmail.com">email</a>
+                <a href="https://x.com/sergio_amb20302" target="_blank">x/twitter</a>
+                <a href="#" onclick="alert('CV available upon request'); return false;">cv</a>
+            </div>
+        </div>
+
+        <!-- Current -->
+        <div class="section">
+            <h2 class="section-title">Currently</h2>
+            <div class="current">
+                <div class="role-header">
+                    <div class="company">Syngenta Group</div>
+                    <div class="date">2024 – Present</div>
+                </div>
+                <div class="position">Head of IT & Digital, Crop Protection Marketing, Japan, ANZ</div>
+                <div class="description">
+                    Leading digital, AI and data strategy for $14B global division. 
+                    Architecting transformation roadmaps, pioneering ML forecasting and satellite-based 
+                    market analytics, managing SAP S/4HANA rollout. Reduced strategic planning effort 50% 
+                    through AI automation. Overseeing $300M ANZ IT operations.
+                </div>
+            </div>
+        </div>
+
+        <!-- Speaking -->
+        <div class="section">
+            <h2 class="section-title">Speaking</h2>
+            
+            <div class="event">
+                <div class="upcoming">Upcoming</div>
+                <div class="event-title">The 95% Failure Rate: Are Swiss AI Projects Stuck in Pilot Purgatory?</div>
+                <div class="event-meta">
+                    12th Richmond IT Forum, Interlaken<br>
+                    March 24-25, 2026
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">Who Owns the Digital Transformation? CIO or CEO?</div>
+                <div class="event-meta">
+                    Guest Lecturer, FHNW School of Business<br>
+                    2023
+                </div>
+            </div>
+            
+            <div class="event">
+                <div class="event-title">Digital Transformation: Strategy to Execution</div>
+                <div class="event-meta">
+                    Guest Lecturer, FHNW School of Business<br>
+                    2022
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="edu-item highlight-edu">
+                <div class="edu-degree">Executive Program: Business Transformation in the Age of AI</div>
+                <div class="edu-school">MIT Sloan & McKinsey (Top 200 Global Leaders)</div>
+                <div class="edu-year">2024-2025</div>
+            </div>
+            
+            <div class="edu-item">
+                <div class="edu-degree">CAS in Artificial Intelligence & Machine Learning</div>
+                <div class="edu-school">ETH Zürich</div>
+                <div class="edu-year">2024</div>
+            </div>
+            
+            <div class="edu-item">
+                <div class="edu-degree">MBA in Agribusiness</div>
+                <div class="edu-school">USP ESALQ</div>
+                <div class="edu-year">2024</div>
+            </div>
+            
+            <div class="edu-item">
+                <div class="edu-degree">MSc in Management</div>
+                <div class="edu-school">FHNW</div>
+                <div class="edu-year">2020</div>
+            </div>
+        </div>
+
+        <!-- Previously -->
+        <div class="section">
+            <h2 class="section-title">Previously</h2>
+            
+            <div class="current">
+                <div class="role-header">
+                    <div class="company">Syngenta</div>
+                    <div class="date">2023 – 2024</div>
+                </div>
+                <div class="position">Global Head, IT & Digital – Vegetables & Flowers</div>
+                <div class="description">
+                    Pioneered B2B eCommerce across 14 countries on Salesforce. 20% service optimization.
+                </div>
+            </div>
+            
+            <div class="current">
+                <div class="role-header">
+                    <div class="company">Syngenta</div>
+                    <div class="date">2022 – 2023</div>
+                </div>
+                <div class="position">Head of IT & Digital, EMEA – Vegetables & Flowers</div>
+                <div class="description">
+                    Launched AI-powered seed placement product, 1,200 new customers. Led 35-person team.
+                </div>
+            </div>
+            
+            <div class="current">
+                <div class="role-header">
+                    <div class="company">Syngenta</div>
+                    <div class="date">2019 – 2022</div>
+                </div>
+                <div class="position">Global Sourcing & Supplier Manager, IT</div>
+                <div class="description">
+                    Managed vendor ecosystem for infrastructure (networks, cloud, data centers, cybersecurity). 
+                    Post-merger integration delivered $8M NPV. Resolved Azure cost issues, 20% reduction.
+                </div>
+            </div>
+            
+            <div class="current">
+                <div class="role-header">
+                    <div class="company">Syngenta</div>
+                    <div class="date">2016 – 2019</div>
+                </div>
+                <div class="position">PMO Lead – Salesforce Global Rollout</div>
+                <div class="description">
+                    Directed $95M program, 7,000+ users, 50+ countries, 100-person team.
+                </div>
+            </div>
+            
+            <div class="current">
+                <div class="role-header">
+                    <div class="company">Mars</div>
+                    <div class="date">2010 – 2013</div>
+                </div>
+                <div class="position">Sales Representative</div>
+                <div class="description">
+                    Led $12M distributor relationship, 8% growth.
+                </div>
+            </div>
+            
+            <div class="current">
+                <div class="role-header">
+                    <div class="company">Nestlé</div>
+                    <div class="date">2007 – 2010</div>
+                </div>
+                <div class="position">Sales Representative</div>
+                <div class="description">
+                    Managed key retail accounts (Walmart, Carrefour, Casino).
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <div>Basel, Switzerland</div>
+                <div>Open to CIO opportunities</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
