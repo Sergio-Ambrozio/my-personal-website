@@ -23,21 +23,40 @@
         }
         
         .container {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 80px 30px 120px;
+            padding: 60px 30px 120px;
         }
         
-        /* Header */
+        /* Header with Photo */
         .header {
             margin-bottom: 60px;
+        }
+        
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+        
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+        
+        .header-info {
+            flex: 1;
         }
         
         .name {
             font-size: 42px;
             font-weight: 700;
             letter-spacing: -0.5px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             color: #000;
         }
         
@@ -45,7 +64,6 @@
             font-size: 20px;
             color: #666;
             font-weight: 400;
-            margin-bottom: 24px;
             line-height: 1.5;
         }
         
@@ -53,7 +71,7 @@
             font-size: 18px;
             line-height: 1.75;
             color: #444;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
         
         .links {
@@ -81,20 +99,38 @@
         .section-title {
             font-size: 24px;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             color: #000;
             letter-spacing: -0.3px;
         }
         
-        /* Current */
-        .current {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5e5e5;
-            margin-bottom: 20px;
+        /* Timeline Items */
+        .timeline-item {
+            position: relative;
+            padding-left: 56px;
+            padding-bottom: 32px;
+            border-left: 2px solid #e5e5e5;
+            margin-left: 12px;
         }
         
-        .current:last-child {
-            border-bottom: none;
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+            padding-bottom: 0;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: -14px;
+            top: 2px;
+            width: 26px;
+            height: 26px;
+            background: white;
+            border: 2px solid #e5e5e5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
         }
         
         .role-header {
@@ -142,6 +178,15 @@
             padding-bottom: 0;
         }
         
+        .event-banner {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
         .event-title {
             font-size: 17px;
             font-weight: 500;
@@ -156,6 +201,15 @@
             line-height: 1.5;
         }
         
+        .event-meta a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .event-meta a:hover {
+            text-decoration: underline;
+        }
+        
         .upcoming {
             display: inline-block;
             font-size: 13px;
@@ -166,14 +220,31 @@
         
         /* Education */
         .edu-item {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 56px;
+            padding-bottom: 28px;
+            border-left: 2px solid #e5e5e5;
+            margin-left: 12px;
         }
         
         .edu-item:last-child {
-            border-bottom: none;
+            border-left: 2px solid transparent;
             padding-bottom: 0;
+        }
+        
+        .edu-icon {
+            position: absolute;
+            left: -14px;
+            top: 2px;
+            width: 26px;
+            height: 26px;
+            background: white;
+            border: 2px solid #e5e5e5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
         }
         
         .edu-degree {
@@ -197,9 +268,10 @@
         .highlight-edu {
             background: #f8f9fa;
             padding: 16px;
-            margin: -16px;
+            margin: -16px -16px -16px 0;
             border-radius: 6px;
             border-left: 3px solid #0066cc;
+            margin-left: -3px;
         }
         
         /* Footer */
@@ -209,24 +281,28 @@
             border-top: 1px solid #e5e5e5;
             font-size: 15px;
             color: #888;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
+            text-align: center;
         }
         
         /* Responsive */
         @media (max-width: 600px) {
             .container {
-                padding: 50px 24px 80px;
+                padding: 40px 24px 80px;
+            }
+            
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .profile-photo {
+                width: 100px;
+                height: 100px;
             }
             
             .name {
-                font-size: 36px;
+                font-size: 32px;
             }
             
             .title {
@@ -238,9 +314,20 @@
                 align-items: flex-start;
             }
             
-            .footer-content {
-                flex-direction: column;
-                align-items: flex-start;
+            .timeline-item {
+                padding-left: 40px;
+            }
+            
+            .edu-item {
+                padding-left: 40px;
+            }
+
+            .event-banner {
+                margin-left: -24px;
+                margin-right: -24px;
+                width: calc(100% + 48px);
+                max-width: none;
+                border-radius: 0;
             }
         }
         
@@ -259,25 +346,31 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1 class="name">Sergio Ambrozio</h1>
-            <div class="title">Technology executive. AI, data, transformation.</div>
+            <div class="header-top">
+                <img src="sergio-photo.jpg" alt="Sergio Ambrozio" class="profile-photo">
+                <div class="header-info">
+                    <h1 class="name">Sergio Ambrozio</h1>
+                    <div class="title">Technology executive. AI, data, transformation.</div>
+                </div>
+            </div>
             <div class="bio">
                 I lead digital and AI strategy for Syngenta's $14B Crop Protection Marketing division, 
                 where I architect transformation roadmaps and build capabilities across 120+ countries. 
                 Previously scaled B2B platforms, led enterprise integrations, and managed commercial operations 
-                at Mars and Nestlé. Based in Basel, exploring CIO opportunities.
+                at Mars and Nestlé. Based in Basel.
             </div>
             <div class="links">
-                <a href="mailto:sergiomoriya@gmail.com">email</a>
-                <a href="https://x.com/sergio_amb20302" target="_blank">x/twitter</a>
-                <a href="#" onclick="alert('CV available upon request'); return false;">cv</a>
+                <a href="mailto:sergiomoriya@gmail.com">sergiomoriya@gmail.com</a>
+                <a href="https://x.com/sergio_amb20302" target="_blank">@sergio_amb20302</a>
+                <a href="Sergio_Ambrozio_CV.pdf" target="_blank">cv</a>
             </div>
         </div>
 
-        <!-- Current -->
+        <!-- Currently -->
         <div class="section">
             <h2 class="section-title">Currently</h2>
-            <div class="current">
+            <div class="timeline-item">
+                <div class="timeline-icon">🌾</div>
                 <div class="role-header">
                     <div class="company">Syngenta Group</div>
                     <div class="date">2024 – Present</div>
@@ -292,12 +385,26 @@
             </div>
         </div>
 
+        <!-- Publications -->
+        <div class="section">
+            <h2 class="section-title">Publications</h2>
+            <div class="event">
+                <div class="event-title">Navigating Uncertainty: Isomorphic Pressures in Cloud Computing Adoption</div>
+                <div class="event-meta">
+                    Co-authored with Dr. Johan Lindeque and Marc K. Peter<br>
+                    Springer: Digital Transformation and Resilience in the Agri-Food Industry<br>
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-2516-1_18" target="_blank">View publication →</a>
+                </div>
+            </div>
+        </div>
+
         <!-- Speaking -->
         <div class="section">
             <h2 class="section-title">Speaking</h2>
             
             <div class="event">
                 <div class="upcoming">Upcoming</div>
+                <img src="richmond-forum-banner.jpg" alt="12th Richmond IT Forum" class="event-banner">
                 <div class="event-title">The 95% Failure Rate: Are Swiss AI Projects Stuck in Pilot Purgatory?</div>
                 <div class="event-meta">
                     12th Richmond IT Forum, Interlaken<br>
@@ -327,24 +434,28 @@
             <h2 class="section-title">Education</h2>
             
             <div class="edu-item highlight-edu">
+                <div class="edu-icon">🎓</div>
                 <div class="edu-degree">Executive Program: Business Transformation in the Age of AI</div>
                 <div class="edu-school">MIT Sloan & McKinsey (Top 200 Global Leaders)</div>
                 <div class="edu-year">2024-2025</div>
             </div>
             
             <div class="edu-item">
+                <div class="edu-icon">🎓</div>
                 <div class="edu-degree">CAS in Artificial Intelligence & Machine Learning</div>
                 <div class="edu-school">ETH Zürich</div>
                 <div class="edu-year">2024</div>
             </div>
             
             <div class="edu-item">
+                <div class="edu-icon">🎓</div>
                 <div class="edu-degree">MBA in Agribusiness</div>
                 <div class="edu-school">USP ESALQ</div>
                 <div class="edu-year">2024</div>
             </div>
             
             <div class="edu-item">
+                <div class="edu-icon">🎓</div>
                 <div class="edu-degree">MSc in Management</div>
                 <div class="edu-school">FHNW</div>
                 <div class="edu-year">2020</div>
@@ -355,7 +466,8 @@
         <div class="section">
             <h2 class="section-title">Previously</h2>
             
-            <div class="current">
+            <div class="timeline-item">
+                <div class="timeline-icon">🌾</div>
                 <div class="role-header">
                     <div class="company">Syngenta</div>
                     <div class="date">2023 – 2024</div>
@@ -366,7 +478,8 @@
                 </div>
             </div>
             
-            <div class="current">
+            <div class="timeline-item">
+                <div class="timeline-icon">🌾</div>
                 <div class="role-header">
                     <div class="company">Syngenta</div>
                     <div class="date">2022 – 2023</div>
@@ -377,7 +490,8 @@
                 </div>
             </div>
             
-            <div class="current">
+            <div class="timeline-item">
+                <div class="timeline-icon">🌾</div>
                 <div class="role-header">
                     <div class="company">Syngenta</div>
                     <div class="date">2019 – 2022</div>
@@ -389,7 +503,8 @@
                 </div>
             </div>
             
-            <div class="current">
+            <div class="timeline-item">
+                <div class="timeline-icon">🌾</div>
                 <div class="role-header">
                     <div class="company">Syngenta</div>
                     <div class="date">2016 – 2019</div>
@@ -400,7 +515,8 @@
                 </div>
             </div>
             
-            <div class="current">
+            <div class="timeline-item">
+                <div class="timeline-icon">🍫</div>
                 <div class="role-header">
                     <div class="company">Mars</div>
                     <div class="date">2010 – 2013</div>
@@ -411,7 +527,8 @@
                 </div>
             </div>
             
-            <div class="current">
+            <div class="timeline-item">
+                <div class="timeline-icon">☕</div>
                 <div class="role-header">
                     <div class="company">Nestlé</div>
                     <div class="date">2007 – 2010</div>
@@ -425,10 +542,7 @@
 
         <!-- Footer -->
         <div class="footer">
-            <div class="footer-content">
-                <div>Basel, Switzerland</div>
-                <div>Open to CIO opportunities</div>
-            </div>
+            Basel, Switzerland
         </div>
     </div>
 </body>
