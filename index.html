@@ -16,297 +16,353 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.7;
-            color: #333;
+            color: #2c3e50;
             background: #ffffff;
-            font-size: 18px;
+            font-size: 17px;
             -webkit-font-smoothing: antialiased;
         }
         
         .container {
-            max-width: 720px;
+            max-width: 680px;
             margin: 0 auto;
-            padding: 60px 30px 120px;
+            padding: 60px 30px 100px;
         }
         
-        /* Header with Photo */
+        /* Header */
         .header {
             margin-bottom: 60px;
-        }
-        
-        .header-top {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            margin-bottom: 24px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .profile-photo {
-            width: 120px;
-            height: 120px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            flex-shrink: 0;
+            margin-bottom: 30px;
             object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 3px solid #ffffff;
+            transition: transform 0.3s ease;
         }
         
-        .header-info {
-            flex: 1;
+        .profile-photo:hover {
+            transform: scale(1.02);
         }
         
         .name {
-            font-size: 42px;
+            font-size: 36px;
             font-weight: 700;
             letter-spacing: -0.5px;
-            margin-bottom: 8px;
-            color: #000;
+            margin-bottom: 12px;
+            color: #1a1a1a;
         }
         
         .title {
-            font-size: 20px;
-            color: #666;
-            font-weight: 400;
-            line-height: 1.5;
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 24px;
         }
         
         .bio {
-            font-size: 18px;
-            line-height: 1.75;
-            color: #444;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4b5563;
             margin-bottom: 28px;
         }
         
+        /* Contact links with icons */
         .links {
             display: flex;
             gap: 24px;
             flex-wrap: wrap;
-            font-size: 16px;
+            font-size: 15px;
         }
         
         .links a {
-            color: #0066cc;
+            color: #2563eb;
             text-decoration: none;
-            transition: color 0.2s;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px 6px 6px;
+            border-radius: 6px;
         }
         
         .links a:hover {
-            color: #004499;
+            color: #1d4ed8;
+            background: #f0f9ff;
         }
         
-        /* Section */
+        .icon {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        /* Sections */
         .section {
-            margin-bottom: 64px;
+            margin-bottom: 56px;
         }
         
         .section-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
-            margin-bottom: 28px;
-            color: #000;
+            margin-bottom: 24px;
+            color: #1a1a1a;
             letter-spacing: -0.3px;
+            position: relative;
+            padding-bottom: 8px;
         }
         
-        /* Timeline Items */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #2563eb, transparent);
+        }
+        
+        /* X Posts */
+        .x-embed-container {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .x-embed-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .x-embed-title {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .x-view-more {
+            font-size: 13px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .x-view-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Timeline with BIGGER logos */
         .timeline-item {
             position: relative;
-            padding-left: 56px;
-            padding-bottom: 32px;
-            border-left: 2px solid #e5e5e5;
-            margin-left: 12px;
+            padding-left: 68px;
+            padding-bottom: 28px;
+            border-left: 1px solid #e5e7eb;
+            margin-left: 22px;
         }
         
         .timeline-item:last-child {
-            border-left: 2px solid transparent;
+            border-left: 1px solid transparent;
             padding-bottom: 0;
         }
         
-        .timeline-icon {
+        .timeline-logo {
             position: absolute;
-            left: -14px;
-            top: 2px;
-            width: 26px;
-            height: 26px;
-            background: white;
-            border: 2px solid #e5e5e5;
+            left: -24px;
+            top: 0;
+            width: 46px;
+            height: 46px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            overflow: hidden;
+            padding: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+        
+        .timeline-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         .role-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             flex-wrap: wrap;
             gap: 8px;
         }
         
         .company {
-            font-size: 19px;
+            font-size: 16px;
             font-weight: 600;
-            color: #000;
+            color: #1a1a1a;
         }
         
         .date {
-            font-size: 15px;
-            color: #888;
+            font-size: 14px;
+            color: #9ca3af;
             white-space: nowrap;
         }
         
         .position {
-            font-size: 17px;
-            color: #555;
-            margin-bottom: 12px;
+            font-size: 15px;
+            color: #6b7280;
+            margin-bottom: 8px;
         }
         
         .description {
-            font-size: 16px;
-            line-height: 1.65;
-            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #6b7280;
         }
         
-        /* Speaking */
-        .event {
-            margin-bottom: 28px;
-            padding-bottom: 28px;
-            border-bottom: 1px solid #f0f0f0;
+        /* Publications & Speaking */
+        .item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f3f4f6;
         }
         
-        .event:last-child {
+        .item:last-child {
             border-bottom: none;
             padding-bottom: 0;
         }
         
-        .event-banner {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            margin-bottom: 16px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .event-title {
-            font-size: 17px;
-            font-weight: 500;
-            color: #000;
-            margin-bottom: 6px;
-            line-height: 1.4;
-        }
-        
-        .event-meta {
+        .item-title {
             font-size: 15px;
-            color: #888;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 6px;
             line-height: 1.5;
         }
         
-        .event-meta a {
-            color: #0066cc;
+        .item-meta {
+            font-size: 14px;
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+        
+        .item-meta a {
+            color: #2563eb;
             text-decoration: none;
         }
         
-        .event-meta a:hover {
+        .item-meta a:hover {
             text-decoration: underline;
         }
         
         .upcoming {
             display: inline-block;
-            font-size: 13px;
-            color: #0066cc;
-            font-weight: 500;
+            font-size: 11px;
+            color: #2563eb;
+            font-weight: 600;
             margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 4px 10px;
+            background: #eff6ff;
+            border-radius: 4px;
         }
         
-        /* Education */
+        /* Education with BIGGER logos */
         .edu-item {
             position: relative;
-            padding-left: 56px;
-            padding-bottom: 28px;
-            border-left: 2px solid #e5e5e5;
-            margin-left: 12px;
+            padding-left: 68px;
+            padding-bottom: 24px;
+            border-left: 1px solid #e5e7eb;
+            margin-left: 22px;
         }
         
         .edu-item:last-child {
-            border-left: 2px solid transparent;
+            border-left: 1px solid transparent;
             padding-bottom: 0;
         }
         
-        .edu-icon {
+        .edu-logo {
             position: absolute;
-            left: -14px;
-            top: 2px;
-            width: 26px;
-            height: 26px;
-            background: white;
-            border: 2px solid #e5e5e5;
+            left: -24px;
+            top: 0;
+            width: 46px;
+            height: 46px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            overflow: hidden;
+            padding: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+        
+        .edu-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         .edu-degree {
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 500;
-            color: #000;
+            color: #1a1a1a;
             margin-bottom: 4px;
         }
         
         .edu-school {
-            font-size: 16px;
-            color: #666;
+            font-size: 14px;
+            color: #6b7280;
             margin-bottom: 2px;
         }
         
         .edu-year {
-            font-size: 15px;
-            color: #999;
-        }
-        
-        .highlight-edu {
-            background: #f8f9fa;
-            padding: 16px;
-            margin: -16px -16px -16px 0;
-            border-radius: 6px;
-            border-left: 3px solid #0066cc;
-            margin-left: -3px;
+            font-size: 14px;
+            color: #9ca3af;
         }
         
         /* Footer */
         .footer {
             margin-top: 80px;
-            padding-top: 32px;
-            border-top: 1px solid #e5e5e5;
-            font-size: 15px;
-            color: #888;
+            padding-top: 24px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 14px;
+            color: #9ca3af;
             text-align: center;
         }
         
         /* Responsive */
         @media (max-width: 600px) {
             .container {
-                padding: 40px 24px 80px;
-            }
-            
-            .header-top {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
+                padding: 40px 20px 80px;
             }
             
             .profile-photo {
-                width: 100px;
-                height: 100px;
+                width: 140px;
+                height: 140px;
             }
             
             .name {
-                font-size: 32px;
-            }
-            
-            .title {
-                font-size: 18px;
+                font-size: 30px;
             }
             
             .role-header {
@@ -315,30 +371,38 @@
             }
             
             .timeline-item {
-                padding-left: 40px;
+                padding-left: 56px;
+                margin-left: 18px;
+            }
+            
+            .timeline-logo {
+                left: -20px;
+                width: 38px;
+                height: 38px;
             }
             
             .edu-item {
-                padding-left: 40px;
+                padding-left: 56px;
+                margin-left: 18px;
             }
-
-            .event-banner {
-                margin-left: -24px;
-                margin-right: -24px;
-                width: calc(100% + 48px);
-                max-width: none;
+            
+            .edu-logo {
+                left: -20px;
+                width: 38px;
+                height: 38px;
+            }
+            
+            .x-embed-container {
+                padding: 20px;
+                margin-left: -20px;
+                margin-right: -20px;
                 border-radius: 0;
             }
         }
         
-        /* Subtle animations */
-        a {
-            transition: all 0.2s ease;
-        }
-        
         ::selection {
-            background: #0066cc;
-            color: white;
+            background: #dbeafe;
+            color: #1e40af;
         }
     </style>
 </head>
@@ -346,13 +410,9 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <div class="header-top">
-                <img src="sergio-photo.jpg" alt="Sergio Ambrozio" class="profile-photo">
-                <div class="header-info">
-                    <h1 class="name">Sergio Ambrozio</h1>
-                    <div class="title">Technology executive. AI, data, transformation.</div>
-                </div>
-            </div>
+            <img src="sergio-photo.jpg" alt="Sergio Ambrozio" class="profile-photo">
+            <h1 class="name">Sergio Ambrozio</h1>
+            <div class="title">Technology executive. AI, data, transformation.</div>
             <div class="bio">
                 I lead digital and AI strategy for Syngenta's $14B Crop Protection Marketing division, 
                 where I architect transformation roadmaps and build capabilities across 120+ countries. 
@@ -360,9 +420,46 @@
                 at Mars and Nestlé. Based in Basel.
             </div>
             <div class="links">
-                <a href="mailto:sergiomoriya@gmail.com">sergiomoriya@gmail.com</a>
-                <a href="https://x.com/sergio_amb20302" target="_blank">@sergio_amb20302</a>
-                <a href="Sergio_Ambrozio_CV.pdf" target="_blank">cv</a>
+                <a href="mailto:sergio@sergioambrozio.ai">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    sergio@sergioambrozio.ai
+                </a>
+                <a href="https://x.com/s_ambrozio" target="_blank">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                    @s_ambrozio
+                </a>
+                <a href="Sergio_Ambrozio_CV.pdf" target="_blank">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                    cv
+                </a>
+            </div>
+        </div>
+
+        <!-- X Posts -->
+        <div class="section">
+            <h2 class="section-title">Posts</h2>
+            <div class="x-embed-container">
+                <div class="x-embed-header">
+                    <span class="x-embed-title">Recent posts</span>
+                    <a href="https://x.com/s_ambrozio" target="_blank" class="x-view-more">view all →</a>
+                </div>
+                <a class="twitter-timeline" 
+                   data-height="400" 
+                   data-theme="light" 
+                   data-chrome="noheader nofooter noborders transparent"
+                   data-tweet-limit="3"
+                   href="https://twitter.com/s_ambrozio?ref_src=twsrc%5Etfw">
+                </a>
             </div>
         </div>
 
@@ -370,7 +467,9 @@
         <div class="section">
             <h2 class="section-title">Currently</h2>
             <div class="timeline-item">
-                <div class="timeline-icon">🌾</div>
+                <div class="timeline-logo">
+                    <img src="syngenta.png" alt="Syngenta" loading="lazy">
+                </div>
                 <div class="role-header">
                     <div class="company">Syngenta Group</div>
                     <div class="date">2024 – Present</div>
@@ -379,8 +478,8 @@
                 <div class="description">
                     Leading digital, AI and data strategy for $14B global division. 
                     Architecting transformation roadmaps, pioneering ML forecasting and satellite-based 
-                    market analytics, managing SAP S/4HANA rollout. Reduced strategic planning effort 50% 
-                    through AI automation. Overseeing $300M ANZ IT operations.
+                    market analytics. Reduced strategic planning effort 50% through AI automation. 
+                    Overseeing $300M ANZ IT operations.
                 </div>
             </div>
         </div>
@@ -388,12 +487,12 @@
         <!-- Publications -->
         <div class="section">
             <h2 class="section-title">Publications</h2>
-            <div class="event">
-                <div class="event-title">Navigating Uncertainty: Isomorphic Pressures in Cloud Computing Adoption</div>
-                <div class="event-meta">
+            <div class="item">
+                <div class="item-title">Navigating Uncertainty: Isomorphic Pressures in Cloud Computing Adoption</div>
+                <div class="item-meta">
                     Co-authored with Dr. Johan Lindeque and Marc K. Peter<br>
                     Springer: Digital Transformation and Resilience in the Agri-Food Industry<br>
-                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-2516-1_18" target="_blank">View publication →</a>
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-2516-1_18" target="_blank">springer.com →</a>
                 </div>
             </div>
         </div>
@@ -402,29 +501,26 @@
         <div class="section">
             <h2 class="section-title">Speaking</h2>
             
-            <div class="event">
+            <div class="item">
                 <div class="upcoming">Upcoming</div>
-                <img src="richmond-forum-banner.jpg" alt="12th Richmond IT Forum" class="event-banner">
-                <div class="event-title">The 95% Failure Rate: Are Swiss AI Projects Stuck in Pilot Purgatory?</div>
-                <div class="event-meta">
+                <div class="item-title">The 95% Failure Rate: Are Swiss AI Projects Stuck in Pilot Purgatory?</div>
+                <div class="item-meta">
                     12th Richmond IT Forum, Interlaken<br>
                     March 24-25, 2026
                 </div>
             </div>
             
-            <div class="event">
-                <div class="event-title">Who Owns the Digital Transformation? CIO or CEO?</div>
-                <div class="event-meta">
-                    Guest Lecturer, FHNW School of Business<br>
-                    2023
+            <div class="item">
+                <div class="item-title">Who Owns the Digital Transformation? CIO or CEO?</div>
+                <div class="item-meta">
+                    Guest Lecturer, FHNW School of Business, 2023
                 </div>
             </div>
             
-            <div class="event">
-                <div class="event-title">Digital Transformation: Strategy to Execution</div>
-                <div class="event-meta">
-                    Guest Lecturer, FHNW School of Business<br>
-                    2022
+            <div class="item">
+                <div class="item-title">Digital Transformation: Strategy to Execution</div>
+                <div class="item-meta">
+                    Guest Lecturer, FHNW School of Business, 2022
                 </div>
             </div>
         </div>
@@ -433,29 +529,37 @@
         <div class="section">
             <h2 class="section-title">Education</h2>
             
-            <div class="edu-item highlight-edu">
-                <div class="edu-icon">🎓</div>
-                <div class="edu-degree">Executive Program: Business Transformation in the Age of AI</div>
+            <div class="edu-item">
+                <div class="edu-logo">
+                    <img src="MIT.png" alt="MIT" loading="lazy">
+                </div>
+                <div class="edu-degree">Business Transformation in the Age of AI</div>
                 <div class="edu-school">MIT Sloan & McKinsey (Top 200 Global Leaders)</div>
                 <div class="edu-year">2024-2025</div>
             </div>
             
             <div class="edu-item">
-                <div class="edu-icon">🎓</div>
+                <div class="edu-logo">
+                    <img src="eth.png" alt="ETH" loading="lazy">
+                </div>
                 <div class="edu-degree">CAS in Artificial Intelligence & Machine Learning</div>
                 <div class="edu-school">ETH Zürich</div>
                 <div class="edu-year">2024</div>
             </div>
             
             <div class="edu-item">
-                <div class="edu-icon">🎓</div>
+                <div class="edu-logo">
+                    <img src="USP esalq.png" alt="USP" loading="lazy">
+                </div>
                 <div class="edu-degree">MBA in Agribusiness</div>
                 <div class="edu-school">USP ESALQ</div>
                 <div class="edu-year">2024</div>
             </div>
             
             <div class="edu-item">
-                <div class="edu-icon">🎓</div>
+                <div class="edu-logo">
+                    <img src="FHNW.png" alt="FHNW" loading="lazy">
+                </div>
                 <div class="edu-degree">MSc in Management</div>
                 <div class="edu-school">FHNW</div>
                 <div class="edu-year">2020</div>
@@ -467,56 +571,24 @@
             <h2 class="section-title">Previously</h2>
             
             <div class="timeline-item">
-                <div class="timeline-icon">🌾</div>
+                <div class="timeline-logo">
+                    <img src="syngenta.png" alt="Syngenta" loading="lazy">
+                </div>
                 <div class="role-header">
                     <div class="company">Syngenta</div>
-                    <div class="date">2023 – 2024</div>
+                    <div class="date">2016 – 2024</div>
                 </div>
-                <div class="position">Global Head, IT & Digital – Vegetables & Flowers</div>
+                <div class="position">Various leadership roles</div>
                 <div class="description">
-                    Pioneered B2B eCommerce across 14 countries on Salesforce. 20% service optimization.
+                    Global Head IT & Digital (Vegetables & Flowers). Head IT & Digital EMEA. 
+                    Global Sourcing & Supplier Manager. PMO Lead Salesforce ($95M, 7,000+ users, 50+ countries).
                 </div>
             </div>
             
             <div class="timeline-item">
-                <div class="timeline-icon">🌾</div>
-                <div class="role-header">
-                    <div class="company">Syngenta</div>
-                    <div class="date">2022 – 2023</div>
+                <div class="timeline-logo">
+                    <img src="Mars_Incorporated_Logo.png" alt="Mars" loading="lazy">
                 </div>
-                <div class="position">Head of IT & Digital, EMEA – Vegetables & Flowers</div>
-                <div class="description">
-                    Launched AI-powered seed placement product, 1,200 new customers. Led 35-person team.
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-icon">🌾</div>
-                <div class="role-header">
-                    <div class="company">Syngenta</div>
-                    <div class="date">2019 – 2022</div>
-                </div>
-                <div class="position">Global Sourcing & Supplier Manager, IT</div>
-                <div class="description">
-                    Managed vendor ecosystem for infrastructure (networks, cloud, data centers, cybersecurity). 
-                    Post-merger integration delivered $8M NPV. Resolved Azure cost issues, 20% reduction.
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-icon">🌾</div>
-                <div class="role-header">
-                    <div class="company">Syngenta</div>
-                    <div class="date">2016 – 2019</div>
-                </div>
-                <div class="position">PMO Lead – Salesforce Global Rollout</div>
-                <div class="description">
-                    Directed $95M program, 7,000+ users, 50+ countries, 100-person team.
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-icon">🍫</div>
                 <div class="role-header">
                     <div class="company">Mars</div>
                     <div class="date">2010 – 2013</div>
@@ -528,7 +600,9 @@
             </div>
             
             <div class="timeline-item">
-                <div class="timeline-icon">☕</div>
+                <div class="timeline-logo">
+                    <img src="NESTLElogo-with-wordmark-oak.png" alt="Nestlé" loading="lazy">
+                </div>
                 <div class="role-header">
                     <div class="company">Nestlé</div>
                     <div class="date">2007 – 2010</div>
@@ -545,5 +619,8 @@
             Basel, Switzerland
         </div>
     </div>
+
+    <!-- X/Twitter Widget -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
