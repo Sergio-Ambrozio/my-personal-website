@@ -5,7 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio Ambrozio</title>
     <meta name="description" content="Technology executive. AI, data, transformation.">
-    
+
+    <!-- SEO & Open Graph -->
+    <link rel="canonical" href="https://sergioambrozio.ai/">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Sergio Ambrozio">
+    <meta property="og:description" content="Technology executive leading digital and AI strategy. AI, data, transformation.">
+    <meta property="og:image" content="https://sergioambrozio.ai/sergio-photo.jpg">
+    <meta property="og:url" content="https://sergioambrozio.ai/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@s_ambrozio">
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://platform.twitter.com">
+    <link rel="dns-prefetch" href="https://platform.twitter.com">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sergio Ambrozio",
+        "jobTitle": "Head of IT & Digital, Crop Protection Marketing",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Syngenta Group"
+        },
+        "description": "Technology executive leading digital and AI strategy.",
+        "url": "https://sergioambrozio.ai",
+        "email": "sergio@sergioambrozio.ai",
+        "sameAs": [
+            "https://x.com/s_ambrozio"
+        ],
+        "alumniOf": [
+            {
+                "@type": "EducationalOrganization",
+                "name": "MIT Sloan"
+            },
+            {
+                "@type": "EducationalOrganization",
+                "name": "ETH Zürich"
+            },
+            {
+                "@type": "EducationalOrganization",
+                "name": "USP ESALQ"
+            },
+            {
+                "@type": "EducationalOrganization",
+                "name": "FHNW"
+            }
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Basel",
+            "addressCountry": "Switzerland"
+        }
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -404,13 +462,214 @@
             background: #dbeafe;
             color: #1e40af;
         }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #2563eb;
+            color: #ffffff;
+            padding: 8px 16px;
+            z-index: 100;
+            text-decoration: none;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .profile-photo {
+                transition: none;
+            }
+
+            .links a {
+                transition: none;
+            }
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #0f172a;
+                color: #e2e8f0;
+            }
+
+            .name {
+                color: #f1f5f9;
+            }
+
+            .title {
+                color: #94a3b8;
+            }
+
+            .bio {
+                color: #cbd5e1;
+            }
+
+            .links a {
+                color: #60a5fa;
+            }
+
+            .links a:hover {
+                color: #93c5fd;
+                background: #1e3a5f;
+            }
+
+            .header {
+                border-bottom-color: #334155;
+            }
+
+            .section-title {
+                color: #f1f5f9;
+            }
+
+            .x-embed-container {
+                background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+                border-color: #334155;
+            }
+
+            .x-embed-header {
+                border-bottom-color: #334155;
+            }
+
+            .x-embed-title {
+                color: #94a3b8;
+            }
+
+            .x-view-more {
+                color: #60a5fa;
+            }
+
+            .timeline-item {
+                border-left-color: #334155;
+            }
+
+            .timeline-logo,
+            .edu-logo {
+                background: #1e293b;
+                border-color: #334155;
+            }
+
+            .company {
+                color: #f1f5f9;
+            }
+
+            .date {
+                color: #64748b;
+            }
+
+            .position,
+            .description {
+                color: #94a3b8;
+            }
+
+            .item {
+                border-bottom-color: #1e293b;
+            }
+
+            .item-title {
+                color: #f1f5f9;
+            }
+
+            .item-meta {
+                color: #64748b;
+            }
+
+            .item-meta a {
+                color: #60a5fa;
+            }
+
+            .upcoming {
+                background: #1e3a5f;
+                color: #60a5fa;
+            }
+
+            .edu-item {
+                border-left-color: #334155;
+            }
+
+            .edu-degree {
+                color: #f1f5f9;
+            }
+
+            .edu-school {
+                color: #94a3b8;
+            }
+
+            .edu-year {
+                color: #64748b;
+            }
+
+            .footer {
+                border-top-color: #334155;
+                color: #64748b;
+            }
+
+            .profile-photo {
+                border-color: #334155;
+            }
+
+            ::selection {
+                background: #1e3a5f;
+                color: #93c5fd;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 12pt;
+                color: #000;
+                background: #fff;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .skip-link,
+            .x-embed-container {
+                display: none;
+            }
+
+            .links a {
+                color: #000;
+            }
+
+            .links a::after {
+                content: " (" attr(href) ")";
+                font-size: 10pt;
+                color: #666;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+                box-shadow: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .timeline-logo,
+            .edu-logo {
+                box-shadow: none;
+            }
+        }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="container">
         <!-- Header -->
-        <div class="header">
-            <img src="sergio-photo.jpg" alt="Sergio Ambrozio" class="profile-photo">
+        <header class="header">
+            <img src="sergio-photo.jpg" alt="Sergio Ambrozio - Technology Executive" class="profile-photo" fetchpriority="high">
             <h1 class="name">Sergio Ambrozio</h1>
             <div class="title">Technology executive. AI, data, transformation.</div>
             <div class="bio">
@@ -427,14 +686,14 @@
                     </svg>
                     sergio@sergioambrozio.ai
                 </a>
-                <a href="https://x.com/s_ambrozio" target="_blank">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                     </svg>
                     @s_ambrozio
                 </a>
-                <a href="Sergio_Ambrozio_CV.pdf" target="_blank">
-                    <svg class="icon" viewBox="0 0 24 24">
+                <a href="Sergio_Ambrozio_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download CV (PDF)">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                         <polyline points="14 2 14 8 20 8"></polyline>
                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -443,15 +702,16 @@
                     cv
                 </a>
             </div>
-        </div>
+        </header>
 
+        <main id="main-content">
         <!-- X Posts -->
-        <div class="section">
+        <section class="section">
             <h2 class="section-title">Posts</h2>
             <div class="x-embed-container">
                 <div class="x-embed-header">
                     <span class="x-embed-title">Recent posts</span>
-                    <a href="https://x.com/s_ambrozio" target="_blank" class="x-view-more">view all →</a>
+                    <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer" class="x-view-more">view all →</a>
                 </div>
                 <a class="twitter-timeline" 
                    data-height="400" 
@@ -461,10 +721,10 @@
                    href="https://twitter.com/s_ambrozio?ref_src=twsrc%5Etfw">
                 </a>
             </div>
-        </div>
+        </section>
 
         <!-- Currently -->
-        <div class="section">
+        <section class="section">
             <h2 class="section-title">Currently</h2>
             <div class="timeline-item">
                 <div class="timeline-logo">
@@ -482,23 +742,23 @@
                     Overseeing $300M ANZ IT operations.
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Publications -->
-        <div class="section">
+        <section class="section">
             <h2 class="section-title">Publications</h2>
             <div class="item">
                 <div class="item-title">Navigating Uncertainty: Isomorphic Pressures in Cloud Computing Adoption</div>
                 <div class="item-meta">
                     Co-authored with Dr. Johan Lindeque and Marc K. Peter<br>
                     Springer: Digital Transformation and Resilience in the Agri-Food Industry<br>
-                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-2516-1_18" target="_blank">springer.com →</a>
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-2516-1_18" target="_blank" rel="noopener noreferrer">springer.com →</a>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Speaking -->
-        <div class="section">
+        <section class="section">
             <h2 class="section-title">Speaking</h2>
             
             <div class="item">
@@ -523,10 +783,10 @@
                     Guest Lecturer, FHNW School of Business, 2022
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Education -->
-        <div class="section">
+        <section class="section">
             <h2 class="section-title">Education</h2>
             
             <div class="edu-item">
@@ -564,10 +824,10 @@
                 <div class="edu-school">FHNW</div>
                 <div class="edu-year">2020</div>
             </div>
-        </div>
+        </section>
 
         <!-- Previously -->
-        <div class="section">
+        <section class="section">
             <h2 class="section-title">Previously</h2>
             
             <div class="timeline-item">
@@ -612,12 +872,13 @@
                     Managed key retail accounts (Walmart, Carrefour, Casino).
                 </div>
             </div>
-        </div>
+        </section>
+        </main>
 
         <!-- Footer -->
-        <div class="footer">
+        <footer class="footer">
             Basel, Switzerland
-        </div>
+        </footer>
     </div>
 
     <!-- X/Twitter Widget -->
