@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "date": "2026-08-29",
+      "url": "https://x.com/s_ambrozio/status/2093702599186755637",
+      "title": {
+        "en": "The sandbox does not contain the agent",
+        "pt": "Sandbox não contém agente"
+      },
+      "dek": {
+        "en": "OpenAI eval agents left a sandbox and hit Hugging Face production. If your agent installs packages or talks to an artifact store, that is SOC, not a pilot.",
+        "pt": "Agentes de eval da OpenAI saíram de um sandbox e chegaram à produção da Hugging Face. Se o seu agente instala pacotes ou fala com um artifact store, isso é SOC, não piloto."
+      }
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-title-en="Sergio Ambrozio" data-title-pt="Sergio Ambrozio">
 <head>
     <script>
         (function () {
-            var lang = 'en';
+            var lang = "en";
             try {
-                var stored = localStorage.getItem('site-lang');
-                if (stored === 'pt' || stored === 'en') lang = stored;
+                var stored = localStorage.getItem("site-lang");
+                if (stored === "pt" || stored === "en") lang = stored;
             } catch (e) {}
             document.documentElement.lang = lang;
-            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.setAttribute("data-lang", lang);
         })();
     </script>
     <meta charset="UTF-8">
@@ -17,9 +17,10 @@
     <title>Sergio Ambrozio</title>
     <meta name="description" content="AI hype from the US. What dies in a real company. For people who run IT in Brazil.">
 
-    <!-- SEO & Open Graph -->
     <link rel="canonical" href="https://sergioambrozio.ai/">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta property="og:title" content="Sergio Ambrozio">
     <meta property="og:description" content="AI hype from the US. What dies in a real company. For people who run IT in Brazil.">
     <meta property="og:image" content="https://sergioambrozio.ai/sergio-photo.jpg">
@@ -28,11 +29,6 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@s_ambrozio">
 
-    <!-- Performance -->
-    <link rel="preconnect" href="https://platform.twitter.com">
-    <link rel="dns-prefetch" href="https://platform.twitter.com">
-
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -50,22 +46,10 @@
             "https://x.com/s_ambrozio"
         ],
         "alumniOf": [
-            {
-                "@type": "EducationalOrganization",
-                "name": "MIT Sloan"
-            },
-            {
-                "@type": "EducationalOrganization",
-                "name": "ETH Zürich"
-            },
-            {
-                "@type": "EducationalOrganization",
-                "name": "USP ESALQ"
-            },
-            {
-                "@type": "EducationalOrganization",
-                "name": "FHNW"
-            }
+            { "@type": "EducationalOrganization", "name": "MIT Sloan" },
+            { "@type": "EducationalOrganization", "name": "ETH Zürich" },
+            { "@type": "EducationalOrganization", "name": "USP ESALQ" },
+            { "@type": "EducationalOrganization", "name": "FHNW" }
         ],
         "address": {
             "@type": "PostalAddress",
@@ -75,957 +59,96 @@
     }
     </script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: #2c3e50;
-            background: #ffffff;
-            font-size: 17px;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 60px 30px 100px;
-        }
-        
-        /* Header */
-        .header {
-            margin-bottom: 60px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .profile-photo {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            margin-bottom: 30px;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border: 3px solid #ffffff;
-            transition: transform 0.3s ease;
-        }
-        
-        .profile-photo:hover {
-            transform: scale(1.02);
-        }
-        
-        .name-row {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 12px 20px;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
-        }
-
-        .name {
-            font-size: 36px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 0;
-            color: #1a1a1a;
-        }
-
-        .lang-switch {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-            font-size: 13px;
-            color: #9ca3af;
-            user-select: none;
-        }
-
-        .lang-switch button {
-            background: none;
-            border: none;
-            padding: 2px 0;
-            font: inherit;
-            font-size: 13px;
-            letter-spacing: 0.04em;
-            color: #9ca3af;
-            cursor: pointer;
-        }
-
-        .lang-switch button:hover {
-            color: #4b5563;
-        }
-
-        .lang-switch button[aria-pressed="true"] {
-            color: #1a1a1a;
-            font-weight: 600;
-        }
-
-        .lang-switch button:focus-visible {
-            outline: 2px solid #2563eb;
-            outline-offset: 2px;
-            border-radius: 2px;
-        }
-
-        html[data-lang="pt"] .i18n-en {
-            display: none !important;
-        }
-
-        html:not([data-lang="pt"]) .i18n-pt {
-            display: none !important;
-        }
-        
-        .title {
-            font-size: 18px;
-            color: #6b7280;
-            margin-bottom: 24px;
-        }
-        
-        .bio {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #4b5563;
-            margin-bottom: 28px;
-        }
-        
-        /* Contact links with icons */
-        .links {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            font-size: 15px;
-        }
-        
-        .links a {
-            color: #2563eb;
-            text-decoration: none;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 12px 6px 6px;
-            border-radius: 6px;
-        }
-        
-        .links a:hover {
-            color: #1d4ed8;
-            background: #f0f9ff;
-        }
-        
-        .icon {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        
-        /* Sections */
-        .section {
-            margin-bottom: 56px;
-        }
-        
-        .section-title {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            color: #1a1a1a;
-            letter-spacing: -0.3px;
-            position: relative;
-            padding-bottom: 8px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, #2563eb, transparent);
-        }
-        
-        /* X Posts */
-        .x-embed-container {
-            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
-            border-radius: 12px;
-            padding: 28px;
-            margin-bottom: 24px;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .x-embed-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 18px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .x-embed-title {
-            font-size: 14px;
-            color: #6b7280;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .x-view-more {
-            font-size: 13px;
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .x-view-more:hover {
-            text-decoration: underline;
-        }
-        
-        /* Timeline with BIGGER logos */
-        .timeline-item {
-            position: relative;
-            padding-left: 68px;
-            padding-bottom: 28px;
-            border-left: 1px solid #e5e7eb;
-            margin-left: 22px;
-        }
-        
-        .timeline-item:last-child {
-            border-left: 1px solid transparent;
-            padding-bottom: 0;
-        }
-        
-        .timeline-logo {
-            position: absolute;
-            left: -24px;
-            top: 0;
-            width: 46px;
-            height: 46px;
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 6px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-        }
-        
-        .timeline-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        
-        .role-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 6px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .company {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-        
-        .date {
-            font-size: 14px;
-            color: #9ca3af;
-            white-space: nowrap;
-        }
-        
-        .position {
-            font-size: 15px;
-            color: #6b7280;
-            margin-bottom: 8px;
-        }
-        
-        .description {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #6b7280;
-        }
-        
-        /* Publications & Speaking */
-        .item {
-            margin-bottom: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid #f3f4f6;
-        }
-        
-        .item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        
-        .item-title {
-            font-size: 15px;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 6px;
-            line-height: 1.5;
-        }
-        
-        .item-meta {
-            font-size: 14px;
-            color: #9ca3af;
-            line-height: 1.6;
-        }
-        
-        .item-meta a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-        
-        .item-meta a:hover {
-            text-decoration: underline;
-        }
-        
-        .upcoming {
-            display: inline-block;
-            font-size: 11px;
-            color: #2563eb;
-            font-weight: 600;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            padding: 4px 10px;
-            background: #eff6ff;
-            border-radius: 4px;
-        }
-        
-        /* Education with BIGGER logos */
-        .edu-item {
-            position: relative;
-            padding-left: 68px;
-            padding-bottom: 24px;
-            border-left: 1px solid #e5e7eb;
-            margin-left: 22px;
-        }
-        
-        .edu-item:last-child {
-            border-left: 1px solid transparent;
-            padding-bottom: 0;
-        }
-        
-        .edu-logo {
-            position: absolute;
-            left: -24px;
-            top: 0;
-            width: 46px;
-            height: 46px;
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 6px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-        }
-        
-        .edu-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        
-        .edu-degree {
-            font-size: 15px;
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-        }
-        
-        .edu-school {
-            font-size: 14px;
-            color: #6b7280;
-            margin-bottom: 2px;
-        }
-        
-        .edu-year {
-            font-size: 14px;
-            color: #9ca3af;
-        }
-        
-        /* Footer */
-        .footer {
-            margin-top: 80px;
-            padding-top: 24px;
-            border-top: 1px solid #f0f0f0;
-            font-size: 14px;
-            color: #9ca3af;
-            text-align: center;
-        }
-        
-        /* Responsive */
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 20px 80px;
-            }
-            
-            .profile-photo {
-                width: 140px;
-                height: 140px;
-            }
-            
-            .name {
-                font-size: 30px;
-            }
-            
-            .role-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .timeline-item {
-                padding-left: 56px;
-                margin-left: 18px;
-            }
-            
-            .timeline-logo {
-                left: -20px;
-                width: 38px;
-                height: 38px;
-            }
-            
-            .edu-item {
-                padding-left: 56px;
-                margin-left: 18px;
-            }
-            
-            .edu-logo {
-                left: -20px;
-                width: 38px;
-                height: 38px;
-            }
-            
-            .x-embed-container {
-                padding: 20px;
-                margin-left: -20px;
-                margin-right: -20px;
-                border-radius: 0;
-            }
-        }
-        
-        ::selection {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        /* Skip link for accessibility */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #2563eb;
-            color: #ffffff;
-            padding: 8px 16px;
-            z-index: 100;
-            text-decoration: none;
-            border-radius: 0 0 4px 0;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        /* Reduced motion preference */
-        @media (prefers-reduced-motion: reduce) {
-            .profile-photo {
-                transition: none;
-            }
-
-            .links a {
-                transition: none;
-            }
-        }
-
-        /* Dark mode */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #0f172a;
-                color: #e2e8f0;
-            }
-
-            .name {
-                color: #f1f5f9;
-            }
-
-            .lang-switch button {
-                color: #64748b;
-            }
-
-            .lang-switch button:hover {
-                color: #94a3b8;
-            }
-
-            .lang-switch button[aria-pressed="true"] {
-                color: #f1f5f9;
-            }
-
-            .title {
-                color: #94a3b8;
-            }
-
-            .bio {
-                color: #cbd5e1;
-            }
-
-            .links a {
-                color: #60a5fa;
-            }
-
-            .links a:hover {
-                color: #93c5fd;
-                background: #1e3a5f;
-            }
-
-            .header {
-                border-bottom-color: #334155;
-            }
-
-            .section-title {
-                color: #f1f5f9;
-            }
-
-            .x-embed-container {
-                background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-                border-color: #334155;
-            }
-
-            .x-embed-header {
-                border-bottom-color: #334155;
-            }
-
-            .x-embed-title {
-                color: #94a3b8;
-            }
-
-            .x-view-more {
-                color: #60a5fa;
-            }
-
-            .timeline-item {
-                border-left-color: #334155;
-            }
-
-            .timeline-logo,
-            .edu-logo {
-                background: #1e293b;
-                border-color: #334155;
-            }
-
-            .company {
-                color: #f1f5f9;
-            }
-
-            .date {
-                color: #64748b;
-            }
-
-            .position,
-            .description {
-                color: #94a3b8;
-            }
-
-            .item {
-                border-bottom-color: #1e293b;
-            }
-
-            .item-title {
-                color: #f1f5f9;
-            }
-
-            .item-meta {
-                color: #64748b;
-            }
-
-            .item-meta a {
-                color: #60a5fa;
-            }
-
-            .upcoming {
-                background: #1e3a5f;
-                color: #60a5fa;
-            }
-
-            .edu-item {
-                border-left-color: #334155;
-            }
-
-            .edu-degree {
-                color: #f1f5f9;
-            }
-
-            .edu-school {
-                color: #94a3b8;
-            }
-
-            .edu-year {
-                color: #64748b;
-            }
-
-            .footer {
-                border-top-color: #334155;
-                color: #64748b;
-            }
-
-            .profile-photo {
-                border-color: #334155;
-            }
-
-            ::selection {
-                background: #1e3a5f;
-                color: #93c5fd;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            body {
-                font-size: 12pt;
-                color: #000;
-                background: #fff;
-            }
-
-            .container {
-                max-width: 100%;
-                padding: 0;
-            }
-
-            .skip-link,
-            .lang-switch,
-            .x-embed-container {
-                display: none;
-            }
-
-            .links a {
-                color: #000;
-            }
-
-            .links a::after {
-                content: " (" attr(href) ")";
-                font-size: 10pt;
-                color: #666;
-            }
-
-            .profile-photo {
-                width: 100px;
-                height: 100px;
-                box-shadow: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-            }
-
-            .timeline-logo,
-            .edu-logo {
-                box-shadow: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link"><span class="i18n-en">Skip to main content</span><span class="i18n-pt">Ir para o conteúdo</span></a>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <img src="sergio-photo.jpg" alt="Sergio Ambrozio - Technology Executive" class="profile-photo" fetchpriority="high">
-            <div class="name-row">
-                <h1 class="name">Sergio Ambrozio</h1>
+    <div class="wrap">
+        <header class="masthead">
+            <a class="brand" href="/">
+                <span class="brand-mark">Mesa</span>
+            </a>
+            <div class="masthead-tools">
+                <nav class="nav-links" aria-label="Site">
+                    <a href="/about"><span class="i18n-en">About</span><span class="i18n-pt">Sobre</span></a>
+                </nav>
                 <nav class="lang-switch" aria-label="Language">
                     <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
                     <span aria-hidden="true">|</span>
                     <button type="button" data-set-lang="pt" aria-pressed="false">PT</button>
                 </nav>
             </div>
-            <div class="title">
-                <span class="i18n-en">AI hype from the US. What dies in a real company.</span>
-                <span class="i18n-pt">Hype de IA nos EUA. O que morre numa empresa de verdade.</span>
-            </div>
-            <div class="bio">
-                <span class="i18n-en">For people who run IT in Brazil.<br>Head of IT & Digital, Syngenta. Basel, via São Paulo.</span>
-                <span class="i18n-pt">Pra quem decide TI no Brasil.<br>Head of IT & Digital, Syngenta. Basel, via São Paulo.</span>
-            </div>
-            <div class="links">
-                <a href="mailto:sergio@sergioambrozio.ai">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    sergio@sergioambrozio.ai
-                </a>
-                <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                    </svg>
-                    @s_ambrozio
-                </a>
-                <a href="Sergio_Ambrozio_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download CV (PDF)">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                    </svg>
-                    cv
-                </a>
-            </div>
         </header>
 
         <main id="main-content">
-        <!-- X Posts -->
-        <section class="section">
-            <h2 class="section-title"><span class="i18n-en">Posts</span><span class="i18n-pt">Posts</span></h2>
-            <div class="x-embed-container">
-                <div class="x-embed-header">
-                    <span class="x-embed-title"><span class="i18n-en">Recent posts</span><span class="i18n-pt">Posts recentes</span></span>
-                    <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer" class="x-view-more"><span class="i18n-en">view all →</span><span class="i18n-pt">ver todos →</span></a>
+            <section class="hero">
+                <div class="hero-copy">
+                    <h1 class="name">Sergio Ambrozio</h1>
+                    <p class="lede">
+                        <span class="i18n-en">AI hype from the US. What dies in a real company.</span>
+                        <span class="i18n-pt">Hype de IA nos EUA. O que morre numa empresa de verdade.</span>
+                    </p>
+                    <p class="audience">
+                        <span class="i18n-en">For people who run IT in Brazil.</span>
+                        <span class="i18n-pt">Pra quem decide TI no Brasil.</span>
+                    </p>
                 </div>
-                <a class="twitter-timeline" 
-                   data-height="400" 
-                   data-theme="light" 
-                   data-chrome="noheader nofooter noborders transparent"
-                   data-tweet-limit="3"
-                   href="https://twitter.com/s_ambrozio?ref_src=twsrc%5Etfw">
+                <img
+                    src="sergio-photo.jpg"
+                    alt="Sergio Ambrozio"
+                    class="portrait"
+                    width="1568"
+                    height="2000"
+                    fetchpriority="high"
+                    data-alt-en="Sergio Ambrozio"
+                    data-alt-pt="Sergio Ambrozio"
+                >
+            </section>
+
+            <article>
+                <a class="featured" href="https://x.com/s_ambrozio/status/2093702599186755637" target="_blank" rel="noopener noreferrer">
+                    <p class="kicker"><span class="i18n-en">This week's piece</span><span class="i18n-pt">Destaque da semana</span></p>
+                    <h2 class="featured-title">
+                        <span class="i18n-en">The sandbox does not contain the agent</span>
+                        <span class="i18n-pt">Sandbox não contém agente</span>
+                    </h2>
+                    <p class="featured-dek">
+                        <span class="i18n-en">OpenAI eval agents left a sandbox and hit Hugging Face production. If your agent installs packages or talks to an artifact store, that is SOC, not a pilot.</span>
+                        <span class="i18n-pt">Agentes de eval da OpenAI saíram de um sandbox e chegaram à produção da Hugging Face. Se o seu agente instala pacotes ou fala com um artifact store, isso é SOC, não piloto.</span>
+                    </p>
+                    <p class="meta">
+                        <time datetime="2026-08-29"><span class="i18n-en">29 Aug 2026</span><span class="i18n-pt">29 ago 2026</span></time>
+                        <span aria-hidden="true"> · </span>
+                        <span class="arrow"><span class="i18n-en">Read on X →</span><span class="i18n-pt">Ler no X →</span></span>
+                    </p>
                 </a>
-            </div>
-        </section>
+            </article>
 
-        <!-- Currently -->
-        <section class="section">
-            <h2 class="section-title"><span class="i18n-en">Currently</span><span class="i18n-pt">Atualmente</span></h2>
-            <div class="timeline-item">
-                <div class="timeline-logo">
-                    <img src="syngenta.png" alt="Syngenta" loading="lazy">
-                </div>
-                <div class="role-header">
-                    <div class="company">Syngenta Group</div>
-                    <div class="date"><span class="i18n-en">2024 – Present</span><span class="i18n-pt">2024 – Presente</span></div>
-                </div>
-                <div class="position">Head of IT & Digital, Crop Protection Marketing, Japan, ANZ</div>
-                <div class="description">
-                    <span class="i18n-en">Head of IT & Digital for Crop Protection Marketing, Japan, and ANZ.</span>
-                    <span class="i18n-pt">Head of IT & Digital for Crop Protection Marketing, Japan e ANZ.</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications -->
-        <section class="section">
-            <h2 class="section-title"><span class="i18n-en">Publications</span><span class="i18n-pt">Publicações</span></h2>
-            <div class="item">
-                <div class="item-title">Navigating Uncertainty: Isomorphic Pressures in Cloud Computing Adoption</div>
-                <div class="item-meta">
-                    <span class="i18n-en">Co-authored with Dr. Johan Lindeque and Marc K. Peter</span><span class="i18n-pt">Em coautoria com Dr. Johan Lindeque e Marc K. Peter</span><br>
-                    Springer: Digital Transformation and Resilience in the Agri-Food Industry<br>
-                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-2516-1_18" target="_blank" rel="noopener noreferrer">springer.com →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Speaking -->
-        <section class="section">
-            <h2 class="section-title"><span class="i18n-en">Speaking</span><span class="i18n-pt">Palestras</span></h2>
-            
-            <div class="item">
-                <div class="item-title">The 95% Failure Rate: Are Swiss AI Projects Stuck in Pilot Purgatory?</div>
-                <div class="item-meta">
-                    12th Richmond IT Forum, Interlaken<br>
-                    <span class="i18n-en">March 24-25, 2026</span><span class="i18n-pt">24–25 de março de 2026</span>
-                </div>
-            </div>
-            
-            <div class="item">
-                <div class="item-title">Who Owns the Digital Transformation? CIO or CEO?</div>
-                <div class="item-meta">
-                    <span class="i18n-en">Guest Lecturer, FHNW School of Business, 2023</span><span class="i18n-pt">Professor convidado, FHNW School of Business, 2023</span>
-                </div>
-            </div>
-            
-            <div class="item">
-                <div class="item-title">Digital Transformation: Strategy to Execution</div>
-                <div class="item-meta">
-                    <span class="i18n-en">Guest Lecturer, FHNW School of Business, 2022</span><span class="i18n-pt">Professor convidado, FHNW School of Business, 2022</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="section">
-            <h2 class="section-title"><span class="i18n-en">Education</span><span class="i18n-pt">Formação</span></h2>
-            
-            <div class="edu-item">
-                <div class="edu-logo">
-                    <img src="MIT.png" alt="MIT" loading="lazy">
-                </div>
-                <div class="edu-degree">Business Transformation in the Age of AI</div>
-                <div class="edu-school">MIT Sloan & McKinsey (Top 200 Global Leaders)</div>
-                <div class="edu-year">2024-2025</div>
-            </div>
-            
-            <div class="edu-item">
-                <div class="edu-logo">
-                    <img src="eth.png" alt="ETH" loading="lazy">
-                </div>
-                <div class="edu-degree">CAS in Artificial Intelligence & Machine Learning</div>
-                <div class="edu-school">ETH Zürich</div>
-                <div class="edu-year">2024</div>
-            </div>
-            
-            <div class="edu-item">
-                <div class="edu-logo">
-                    <img src="USP esalq.png" alt="USP" loading="lazy">
-                </div>
-                <div class="edu-degree">MBA in Agribusiness</div>
-                <div class="edu-school">USP ESALQ</div>
-                <div class="edu-year">2024</div>
-            </div>
-            
-            <div class="edu-item">
-                <div class="edu-logo">
-                    <img src="FHNW.png" alt="FHNW" loading="lazy">
-                </div>
-                <div class="edu-degree">MSc in Management</div>
-                <div class="edu-school">FHNW</div>
-                <div class="edu-year">2020</div>
-            </div>
-        </section>
-
-        <!-- Previously -->
-        <section class="section">
-            <h2 class="section-title"><span class="i18n-en">Previously</span><span class="i18n-pt">Antes</span></h2>
-            
-            <div class="timeline-item">
-                <div class="timeline-logo">
-                    <img src="syngenta.png" alt="Syngenta" loading="lazy">
-                </div>
-                <div class="role-header">
-                    <div class="company">Syngenta</div>
-                    <div class="date">2016 – 2024</div>
-                </div>
-                <div class="position"><span class="i18n-en">Various leadership roles</span><span class="i18n-pt">Diversos cargos de liderança</span></div>
-                <div class="description">
-                    <span class="i18n-en">Global Head IT & Digital (Vegetables & Flowers). Head IT & Digital EMEA. Global Sourcing & Supplier Manager. PMO Lead Salesforce ($95M, 7,000+ users, 50+ countries).</span>
-                    <span class="i18n-pt">Global Head IT & Digital (Vegetables & Flowers). Head IT & Digital EMEA. Global Sourcing & Supplier Manager. PMO Lead Salesforce (US$ 95 milhões, mais de 7.000 usuários, mais de 50 países).</span>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-logo">
-                    <img src="Mars_Incorporated_Logo.png" alt="Mars" loading="lazy">
-                </div>
-                <div class="role-header">
-                    <div class="company">Mars</div>
-                    <div class="date">2010 – 2013</div>
-                </div>
-                <div class="position">Sales Representative</div>
-                <div class="description">
-                    <span class="i18n-en">Led $12M distributor relationship, 8% growth.</span>
-                    <span class="i18n-pt">Liderou relacionamento com um distribuidor de US$ 12 milhões, com crescimento de 8%.</span>
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-logo">
-                    <img src="NESTLElogo-with-wordmark-oak.png" alt="Nestlé" loading="lazy">
-                </div>
-                <div class="role-header">
-                    <div class="company">Nestlé</div>
-                    <div class="date">2007 – 2010</div>
-                </div>
-                <div class="position">Sales Representative</div>
-                <div class="description">
-                    <span class="i18n-en">Managed key retail accounts (Walmart, Carrefour, Casino).</span>
-                    <span class="i18n-pt">Gestão das principais contas do varejo (Walmart, Carrefour, Casino).</span>
-                </div>
-            </div>
-        </section>
+            <section class="section" aria-labelledby="recent-posts">
+                <h2 class="section-title" id="recent-posts"><span class="i18n-en">Recent posts</span><span class="i18n-pt">Posts recentes</span></h2>
+                <ol class="posts">
+                    <li>
+                        <a class="post-row" href="https://x.com/s_ambrozio/status/2093702599186755637" target="_blank" rel="noopener noreferrer">
+                            <time class="post-date" datetime="2026-08-29"><span class="i18n-en">29 Aug 2026</span><span class="i18n-pt">29 ago 2026</span></time>
+                            <span class="post-title">
+                                <span class="i18n-en">The sandbox does not contain the agent</span>
+                                <span class="i18n-pt">Sandbox não contém agente</span>
+                            </span>
+                            <span class="post-arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </ol>
+            </section>
         </main>
 
-        <!-- Footer -->
         <footer class="footer">
-            <span class="i18n-en">Basel, Switzerland</span><span class="i18n-pt">Basileia, Suíça</span>
+            <p class="footer-identity">Head of IT &amp; Digital, Syngenta. Basel, via São Paulo.</p>
+            <p class="links">
+                <a href="mailto:sergio@sergioambrozio.ai">sergio@sergioambrozio.ai</a>
+                <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer">@s_ambrozio</a>
+            </p>
         </footer>
     </div>
-
-    <script>
-        (function () {
-            var STORAGE_KEY = 'site-lang';
-            var META = {
-                en: 'AI hype from the US. What dies in a real company. For people who run IT in Brazil.',
-                pt: 'Hype de IA nos EUA. O que morre numa empresa de verdade. Pra quem decide TI no Brasil.'
-            };
-
-            function getLang() {
-                var current = document.documentElement.getAttribute('data-lang');
-                if (current === 'pt' || current === 'en') return current;
-                try {
-                    var stored = localStorage.getItem(STORAGE_KEY);
-                    if (stored === 'pt' || stored === 'en') return stored;
-                } catch (e) {}
-                return 'en';
-            }
-
-            function applyLang(lang) {
-                document.documentElement.lang = lang;
-                document.documentElement.setAttribute('data-lang', lang);
-                try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
-
-                var desc = META[lang] || META.en;
-                var metaDesc = document.querySelector('meta[name="description"]');
-                var ogDesc = document.querySelector('meta[property="og:description"]');
-                if (metaDesc) metaDesc.setAttribute('content', desc);
-                if (ogDesc) ogDesc.setAttribute('content', desc);
-
-                document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
-                    btn.setAttribute('aria-pressed', btn.getAttribute('data-set-lang') === lang ? 'true' : 'false');
-                });
-
-                var photo = document.querySelector('.profile-photo');
-                if (photo) {
-                    photo.alt = lang === 'pt'
-                        ? 'Sergio Ambrozio - Executivo de Tecnologia'
-                        : 'Sergio Ambrozio - Technology Executive';
-                }
-
-                var cv = document.querySelector('a[href="Sergio_Ambrozio_CV.pdf"]');
-                if (cv) {
-                    cv.setAttribute('aria-label', lang === 'pt' ? 'Baixar CV (PDF)' : 'Download CV (PDF)');
-                }
-
-                var langNav = document.querySelector('.lang-switch');
-                if (langNav) {
-                    langNav.setAttribute('aria-label', lang === 'pt' ? 'Idioma' : 'Language');
-                }
-            }
-
-            applyLang(getLang());
-
-            document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    applyLang(btn.getAttribute('data-set-lang'));
-                });
-            });
-        })();
-    </script>
-
-    <!-- X/Twitter Widget -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="site.js"></script>
 </body>
 </html>
