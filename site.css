@@ -198,9 +198,10 @@ html:not([data-lang="pt"]) .i18n-pt {
 
 .portrait {
     width: 210px;
-    height: 270px;
-    object-fit: cover;
-    object-position: 50% 8%;
+    height: auto;
+    aspect-ratio: 1568 / 2000;
+    object-fit: contain;
+    object-position: top center;
     border-radius: 2px;
     background: #d8d2c6;
     display: block;
@@ -270,7 +271,8 @@ html:not([data-lang="pt"]) .i18n-pt {
     border-bottom: 1px solid var(--rule);
 }
 
-.posts {
+.posts,
+.posts li {
     list-style: none;
 }
 
@@ -347,7 +349,7 @@ html:not([data-lang="pt"]) .i18n-pt {
 
 .about-hero .portrait {
     width: 160px;
-    height: 210px;
+    height: auto;
 }
 
 .about-hero .name {
@@ -437,9 +439,10 @@ html:not([data-lang="pt"]) .i18n-pt {
 
     .hero .portrait {
         width: min(100%, 280px);
-        height: 340px;
-        object-position: 50% 4%;
-        order: -1;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        object-position: top center;
     }
 
     .hero-copy .name {
@@ -476,8 +479,9 @@ html:not([data-lang="pt"]) .i18n-pt {
 
     .about-hero .portrait {
         width: min(100%, 240px);
-        height: 300px;
-        object-position: 50% 4%;
+        height: auto;
+        object-fit: contain;
+        object-position: top center;
     }
 }
 
