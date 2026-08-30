@@ -12,7 +12,14 @@
             var stored = localStorage.getItem(STORAGE_KEY);
             if (stored === "pt" || stored === "en") return stored;
         } catch (e) {}
-        return "en";
+        return "pt";
+    }
+
+    function pageCopy(lang, enAttr, ptAttr, fallbackEn, fallbackPt) {
+        var en = document.documentElement.getAttribute(enAttr);
+        var pt = document.documentElement.getAttribute(ptAttr);
+        if (lang === "pt") return pt || fallbackPt;
+        return en || fallbackEn;
     }
 
     function applyLang(lang) {
@@ -22,16 +29,27 @@
             localStorage.setItem(STORAGE_KEY, lang);
         } catch (e) {}
 
-        var desc = META[lang] || META.en;
+        var desc = pageCopy(lang, "data-desc-en", "data-desc-pt", META.en, META.pt);
         var metaDesc = document.querySelector('meta[name="description"]');
         var ogDesc = document.querySelector('meta[property="og:description"]');
+        var twDesc = document.querySelector('meta[name="twitter:description"]');
         if (metaDesc) metaDesc.setAttribute("content", desc);
         if (ogDesc) ogDesc.setAttribute("content", desc);
+        if (twDesc) twDesc.setAttribute("content", desc);
 
-        var titleEn = document.documentElement.getAttribute("data-title-en");
-        var titlePt = document.documentElement.getAttribute("data-title-pt");
-        if (titleEn && titlePt) {
-            document.title = lang === "pt" ? titlePt : titleEn;
+        var title = pageCopy(
+            lang,
+            "data-title-en",
+            "data-title-pt",
+            document.title,
+            document.title
+        );
+        if (title) {
+            document.title = title;
+            var ogTitle = document.querySelector('meta[property="og:title"]');
+            var twTitle = document.querySelector('meta[name="twitter:title"]');
+            if (ogTitle) ogTitle.setAttribute("content", title);
+            if (twTitle) twTitle.setAttribute("content", title);
         }
 
         document.querySelectorAll("[data-set-lang]").forEach(function (btn) {

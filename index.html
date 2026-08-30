@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-title-en="Sergio Ambrozio" data-title-pt="Sergio Ambrozio">
+<html lang="pt" data-lang="pt" data-title-en="Sergio Ambrozio" data-title-pt="Sergio Ambrozio" data-desc-en="AI hype from the US. What dies in a real company. For people who run IT in Brazil." data-desc-pt="Hype de IA nos EUA. O que morre numa empresa de verdade. Pra quem decide TI no Brasil.">
 <head>
     <script>
         (function () {
-            var lang = "en";
+            var lang = "pt";
             try {
                 var stored = localStorage.getItem("site-lang");
                 if (stored === "pt" || stored === "en") lang = stored;
@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio Ambrozio</title>
-    <meta name="description" content="AI hype from the US. What dies in a real company. For people who run IT in Brazil.">
+    <meta name="description" content="Hype de IA nos EUA. O que morre numa empresa de verdade. Pra quem decide TI no Brasil.">
 
     <link rel="canonical" href="https://sergioambrozio.ai/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -23,7 +23,7 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta property="og:title" content="Sergio Ambrozio">
-    <meta property="og:description" content="AI hype from the US. What dies in a real company. For people who run IT in Brazil.">
+    <meta property="og:description" content="Hype de IA nos EUA. O que morre numa empresa de verdade. Pra quem decide TI no Brasil.">
     <meta property="og:image" content="https://sergioambrozio.ai/sergio-photo.jpg">
     <meta property="og:url" content="https://sergioambrozio.ai/">
     <meta property="og:type" content="website">
@@ -68,15 +68,19 @@
         <header class="masthead">
             <a class="brand" href="/">
                 <span class="brand-mark">Mesa</span>
+                <span class="brand-line">
+                    <span class="i18n-en">what moved this week, filtered for people who run IT</span>
+                    <span class="i18n-pt">o que moveu esta semana, filtrado pra quem roda TI</span>
+                </span>
             </a>
             <div class="masthead-tools">
                 <nav class="nav-links" aria-label="Site">
                     <a href="/about"><span class="i18n-en">About</span><span class="i18n-pt">Sobre</span></a>
                 </nav>
-                <nav class="lang-switch" aria-label="Language">
-                    <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+                <nav class="lang-switch" aria-label="Idioma">
+                    <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
                     <span aria-hidden="true">|</span>
-                    <button type="button" data-set-lang="pt" aria-pressed="false">PT</button>
+                    <button type="button" data-set-lang="pt" aria-pressed="true">PT</button>
                 </nav>
             </div>
         </header>
@@ -106,8 +110,8 @@
                 >
             </section>
 
-            <article>
-                <a class="featured" href="https://x.com/s_ambrozio/status/2093980260459037026" target="_blank" rel="noopener noreferrer">
+            <article class="featured">
+                <a class="featured-main" href="/carta-nao-e-controle">
                     <p class="kicker"><span class="i18n-en">This week's piece</span><span class="i18n-pt">Destaque da semana</span></p>
                     <h2 class="featured-title">
                         <span class="i18n-en">A letter is not a control</span>
@@ -120,9 +124,15 @@
                     <p class="meta">
                         <time datetime="2026-08-30"><span class="i18n-en">30 Aug 2026</span><span class="i18n-pt">30 ago 2026</span></time>
                         <span aria-hidden="true"> · </span>
-                        <span class="arrow"><span class="i18n-en">Read on X →</span><span class="i18n-pt">Ler no X →</span></span>
+                        <span class="arrow"><span class="i18n-en">Read →</span><span class="i18n-pt">Ler →</span></span>
                     </p>
                 </a>
+                <p class="featured-also">
+                    <a href="https://x.com/s_ambrozio/status/2093980260459037026" target="_blank" rel="noopener noreferrer">
+                        <span class="i18n-en">also on X</span>
+                        <span class="i18n-pt">também no X</span>
+                    </a>
+                </p>
             </article>
 
             <section class="section" aria-labelledby="recent-posts">
