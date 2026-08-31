@@ -1,9 +1,21 @@
 {
   "posts": [
     {
-      "date": "2026-08-30",
+      "date": "2026-08-31",
       "url": "/",
-      "x": "https://x.com/s_ambrozio/status/2093980260459037026",
+      "x": "https://x.com/s_ambrozio/status/2094336839842734307",
+      "title": {
+        "en": "Who makes the engine wants the shelf",
+        "pt": "Quem faz o motor quer a prateleira"
+      },
+      "dek": {
+        "en": "In practice, they pull from a store.",
+        "pt": "Na prática, puxam de uma loja."
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "url": "https://x.com/s_ambrozio/status/2093980260459037026",
       "title": {
         "en": "A letter is not a control",
         "pt": "Carta não é controle"
