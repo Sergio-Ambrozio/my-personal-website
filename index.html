@@ -67,7 +67,7 @@
     <div class="wrap">
         <header class="masthead">
             <a class="brand" href="/">
-                <span class="brand-mark">Mesa</span>
+                <span class="brand-mark">Pauta</span>
                 <span class="brand-line">
                     <span class="i18n-en">what moved this week, filtered for people who run IT</span>
                     <span class="i18n-pt">o que moveu esta semana, filtrado pra quem roda TI</span>
@@ -86,6 +86,25 @@
         </header>
 
         <main id="main-content">
+            <section class="section section-feed" aria-labelledby="recent-posts" data-feed>
+                <h2 class="section-title" id="recent-posts"><span class="i18n-en">Recent</span><span class="i18n-pt">Recente</span></h2>
+                <ol class="posts" data-feed-list aria-live="polite">
+                    <li>
+                        <p class="feed-status">
+                            <span class="i18n-en">Loading posts…</span>
+                            <span class="i18n-pt">Carregando posts…</span>
+                        </p>
+                    </li>
+                </ol>
+                <noscript>
+                    <p class="feed-status">
+                        <span class="i18n-en">Posts go out on X. Open </span>
+                        <span class="i18n-pt">Os posts saem no X. Abra </span>
+                        <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer">@s_ambrozio</a>.
+                    </p>
+                </noscript>
+            </section>
+
             <article class="lead">
                 <h1 class="lead-title">
                     <span class="i18n-en">A letter is not a control</span>
@@ -120,25 +139,6 @@
                     </a>
                 </p>
             </article>
-
-            <section class="section" aria-labelledby="recent-posts" data-feed>
-                <h2 class="section-title" id="recent-posts"><span class="i18n-en">Recent</span><span class="i18n-pt">Recente</span></h2>
-                <ol class="posts" data-feed-list aria-live="polite">
-                    <li>
-                        <p class="feed-status">
-                            <span class="i18n-en">Loading posts…</span>
-                            <span class="i18n-pt">Carregando posts…</span>
-                        </p>
-                    </li>
-                </ol>
-                <noscript>
-                    <p class="feed-status">
-                        <span class="i18n-en">Posts go out on X. Open </span>
-                        <span class="i18n-pt">Os posts saem no X. Abra </span>
-                        <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer">@s_ambrozio</a>.
-                    </p>
-                </noscript>
-            </section>
         </main>
 
         <footer class="footer">
