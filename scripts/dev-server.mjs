@@ -1,5 +1,5 @@
 import { createServer } from "node:http";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import { extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildFeed } from "../lib/feed.mjs";
@@ -68,6 +68,33 @@ async function serveFeed(url) {
     return { source: "fixture", profile: "https://x.com/s_ambrozio", posts: fixture };
 }
 
+async function resolveFile(pathname) {
+    var path = pathname === "/" ? "/index.html" : pathname;
+    var candidates = [];
+    if (path.endsWith("/")) {
+        candidates.push(path + "index.html");
+    } else {
+        candidates.push(path);
+        if (!extname(path)) {
+            candidates.push(path + ".html");
+            candidates.push(path + "/index.html");
+        }
+    }
+    for (var i = 0; i < candidates.length; i++) {
+        var file = normalize(join(root, candidates[i]));
+        if (!file.startsWith(root)) continue;
+        try {
+            var info = await stat(file);
+            if (info.isFile()) return file;
+        } catch (err) {
+            if (!err || err.code !== "ENOENT") throw err;
+        }
+    }
+    var missing = new Error("not found");
+    missing.code = "ENOENT";
+    throw missing;
+}
+
 createServer(async function (req, res) {
     try {
         var url = new URL(req.url || "/", "http://127.0.0.1");
@@ -77,13 +104,7 @@ createServer(async function (req, res) {
             return;
         }
 
-        var path = url.pathname === "/" ? "/index.html" : url.pathname;
-        if (path.endsWith("/")) path += "index.html";
-        var file = normalize(join(root, path));
-        if (!file.startsWith(root)) {
-            send(res, 403, { "Content-Type": "text/plain" }, "Forbidden");
-            return;
-        }
+        var file = await resolveFile(url.pathname);
         var body = await readFile(file);
         send(res, 200, { "Content-Type": types[extname(file)] || "application/octet-stream" }, body);
     } catch (err) {
