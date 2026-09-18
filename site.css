@@ -195,8 +195,6 @@ html:not([data-lang="pt"]) .i18n-pt {
 
 .lead {
     margin-bottom: 48px;
-    padding-bottom: 36px;
-    border-bottom: 1px solid var(--rule);
 }
 
 .lead-title {
@@ -247,6 +245,12 @@ html:not([data-lang="pt"]) .i18n-pt {
 
 .section {
     margin-bottom: 48px;
+}
+
+.section-feed {
+    margin-bottom: 36px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
 }
 
 .section-title {
@@ -444,6 +448,20 @@ html:not([data-lang="pt"]) .i18n-pt {
 @media (max-width: 680px) {
     .wrap {
         padding: 20px 18px 64px;
+    }
+
+    .section-feed {
+        margin-bottom: 28px;
+        padding-bottom: 4px;
+    }
+
+    .section-feed .section-title {
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+    }
+
+    .section-feed .post-row {
+        padding: 10px 0;
     }
 
     .lead-title {
