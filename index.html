@@ -121,20 +121,23 @@
                 </p>
             </article>
 
-            <section class="section" aria-labelledby="recent-posts">
+            <section class="section" aria-labelledby="recent-posts" data-feed>
                 <h2 class="section-title" id="recent-posts"><span class="i18n-en">Recent</span><span class="i18n-pt">Recente</span></h2>
-                <ol class="posts">
+                <ol class="posts" data-feed-list aria-live="polite">
                     <li>
-                        <a class="post-row" href="https://x.com/s_ambrozio/status/2093702599186755637" target="_blank" rel="noopener noreferrer">
-                            <time class="post-date" datetime="2026-08-29"><span class="i18n-en">29 Aug 2026</span><span class="i18n-pt">29 ago 2026</span></time>
-                            <span class="post-title">
-                                <span class="i18n-en">The sandbox does not contain the agent</span>
-                                <span class="i18n-pt">Sandbox não contém agente</span>
-                            </span>
-                            <span class="post-arrow" aria-hidden="true">→</span>
-                        </a>
+                        <p class="feed-status">
+                            <span class="i18n-en">Loading posts…</span>
+                            <span class="i18n-pt">Carregando posts…</span>
+                        </p>
                     </li>
                 </ol>
+                <noscript>
+                    <p class="feed-status">
+                        <span class="i18n-en">Posts go out on X. Open </span>
+                        <span class="i18n-pt">Os posts saem no X. Abra </span>
+                        <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer">@s_ambrozio</a>.
+                    </p>
+                </noscript>
             </section>
         </main>
 
