@@ -1,0 +1,9 @@
+{
+  "name": "sergioambrozio-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test lib/feed.test.mjs",
+    "dev": "node scripts/dev-server.mjs"
+  }
+}

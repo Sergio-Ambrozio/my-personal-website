@@ -168,7 +168,8 @@ body {
 .nav-links a:focus-visible,
 .links a:focus-visible,
 .lead-x a:focus-visible,
-.post-row:focus-visible {
+.post-row:focus-visible,
+.feed-status a:focus-visible {
     outline: 2px solid var(--link);
     outline-offset: 3px;
 }
@@ -287,6 +288,31 @@ html:not([data-lang="pt"]) .i18n-pt {
 
 .post-title {
     font-size: 17px;
+}
+
+.feed-excerpt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+.feed-status {
+    padding: 14px 0;
+    font-size: 15px;
+    color: var(--muted);
+}
+
+.feed-status a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.feed-status a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .post-arrow {
