@@ -242,6 +242,10 @@ html:not([data-lang="pt"]) .i18n-pt {
     display: none;
 }
 
+.lead-rest:focus {
+    outline: none;
+}
+
 .lead.is-expanded .lead-rest,
 .lead-rest:target {
     display: block;
