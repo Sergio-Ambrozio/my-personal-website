@@ -87,7 +87,7 @@
         var month = parseInt(parts[1], 10) - 1;
         var months = MONTHS[lang] || MONTHS.pt;
         if (!months[month] || !day) return iso || "";
-        return day + " " + months[month] + " " + parts[0];
+        return day + " " + months[month];
     }
 
     function featuredUrls() {
@@ -119,6 +119,8 @@
         return p;
     }
 
+    var HOME_FEED_LIMIT = 5;
+
     function renderFeed(payload) {
         var list = document.querySelector("[data-feed-list]");
         if (!list) return;
@@ -128,6 +130,7 @@
         var shown = 0;
         posts.forEach(function (post) {
             if (!post || !post.url || skip[post.url]) return;
+            if (shown >= HOME_FEED_LIMIT) return;
             shown += 1;
             var li = document.createElement("li");
             var a = document.createElement("a");
@@ -143,13 +146,8 @@
             var title = document.createElement("span");
             title.className = "post-title feed-excerpt";
             title.textContent = post.text || post.url;
-            var arrow = document.createElement("span");
-            arrow.className = "post-arrow";
-            arrow.setAttribute("aria-hidden", "true");
-            arrow.textContent = "→";
             a.appendChild(time);
             a.appendChild(title);
-            a.appendChild(arrow);
             li.appendChild(a);
             list.appendChild(li);
         });
@@ -174,6 +172,32 @@
             });
     }
 
+    function expandLead(lead) {
+        lead.classList.add("is-expanded");
+        var more = lead.querySelector("[data-expand-lead]");
+        if (more) more.setAttribute("aria-expanded", "true");
+    }
+
+    function setupLead() {
+        var lead = document.querySelector("[data-lead]");
+        if (!lead) return;
+        var more = lead.querySelector("[data-expand-lead]");
+        var rest = lead.querySelector(".lead-rest");
+        if (!more || !rest) return;
+
+        if (location.hash === "#carta") {
+            expandLead(lead);
+        }
+
+        more.addEventListener("click", function (event) {
+            event.preventDefault();
+            expandLead(lead);
+            if (history.replaceState) {
+                history.replaceState(null, "", "#carta");
+            }
+        });
+    }
+
     applyLang(getLang());
 
     document.querySelectorAll("[data-set-lang]").forEach(function (btn) {
@@ -182,5 +206,6 @@
         });
     });
 
+    setupLead();
     loadFeed();
 })();
