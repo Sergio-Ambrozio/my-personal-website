@@ -33,6 +33,7 @@ body {
 .masthead,
 .lang-switch,
 .lead-date,
+.lead-more,
 .lead-x,
 .nav-links,
 .footer,
@@ -43,6 +44,7 @@ body {
 .edu-year,
 .edu-school,
 .section-title,
+.section-note,
 .post-date {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
@@ -167,9 +169,11 @@ body {
 .lang-switch button:focus-visible,
 .nav-links a:focus-visible,
 .links a:focus-visible,
+.lead-more a:focus-visible,
 .lead-x a:focus-visible,
 .post-row:focus-visible,
-.feed-status a:focus-visible {
+.feed-status a:focus-visible,
+.section-note a:focus-visible {
     outline: 2px solid var(--link);
     outline-offset: 3px;
 }
@@ -194,42 +198,88 @@ html:not([data-lang="pt"]) .i18n-pt {
 }
 
 .lead {
-    margin-bottom: 48px;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
 }
 
 .lead-title {
-    font-size: 40px;
-    font-weight: 700;
+    font-size: clamp(1.85rem, 6vw, 2.5rem);
+    font-weight: 600;
     letter-spacing: -0.03em;
-    line-height: 1.12;
-    margin-bottom: 14px;
+    line-height: 1.2;
+    margin-bottom: 10px;
 }
 
 .lead-dek {
-    font-size: 20px;
+    font-size: 1.15rem;
     line-height: 1.4;
-    color: #3a352e;
-    margin-bottom: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
     max-width: 42rem;
 }
 
 .lead-date {
     font-size: 13px;
     color: var(--muted);
-    margin-bottom: 28px;
+    margin-bottom: 18px;
 }
 
 .lead-body {
     max-width: 42rem;
+    margin-bottom: 14px;
 }
 
 .lead-body p {
-    margin-bottom: 1.25em;
+    margin-bottom: 0.9em;
+}
+
+.lead-body p:last-child {
+    margin-bottom: 0;
+}
+
+.lead-rest {
+    display: none;
+}
+
+.lead-rest:focus {
+    outline: none;
+}
+
+.lead.is-expanded .lead-rest,
+.lead-rest:target {
+    display: block;
+}
+
+.lead-more {
+    font-size: 14px;
+}
+
+.lead-more a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.lead-more a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.lead.is-expanded .lead-more,
+.lead:has(.lead-rest:target) .lead-more {
+    display: none;
 }
 
 .lead-x {
-    margin-top: 8px;
+    display: none;
+    margin-top: 16px;
     font-size: 14px;
+}
+
+.lead.is-expanded .lead-x,
+.lead:has(.lead-rest:target) .lead-x {
+    display: block;
 }
 
 .lead-x a {
@@ -269,8 +319,8 @@ html:not([data-lang="pt"]) .i18n-pt {
 
 .post-row {
     display: grid;
-    grid-template-columns: 7.5rem minmax(0, 1fr) auto;
-    gap: 12px 16px;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 12px;
     align-items: baseline;
     padding: 14px 0;
     border-bottom: 1px solid var(--rule);
@@ -289,15 +339,33 @@ html:not([data-lang="pt"]) .i18n-pt {
 }
 
 .post-title {
-    font-size: 17px;
+    font-size: 1.05rem;
+    line-height: 1.35;
 }
 
 .feed-excerpt {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     overflow: hidden;
+}
+
+.section-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+.section-note a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.section-note a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .feed-status {
@@ -315,11 +383,6 @@ html:not([data-lang="pt"]) .i18n-pt {
     color: var(--link-hover);
     text-decoration: underline;
     text-underline-offset: 3px;
-}
-
-.post-arrow {
-    font-size: 14px;
-    color: var(--link);
 }
 
 .footer {
@@ -459,23 +522,11 @@ html:not([data-lang="pt"]) .i18n-pt {
     }
 
     .section-feed .post-row {
-        padding: 10px 0;
-    }
-
-    .lead-title {
-        font-size: 32px;
+        padding: 14px 0;
     }
 
     .lead-dek {
-        font-size: 18px;
-    }
-
-    .post-row {
-        grid-template-columns: 1fr auto;
-    }
-
-    .post-date {
-        grid-column: 1 / -1;
+        font-size: 1.1rem;
     }
 
     .about-hero {
@@ -514,7 +565,7 @@ html:not([data-lang="pt"]) .i18n-pt {
     }
 
     .lead-dek {
-        color: #d8d0c3;
+        color: var(--muted);
     }
 }
 
@@ -537,6 +588,15 @@ html:not([data-lang="pt"]) .i18n-pt {
 
     .lead {
         break-inside: avoid;
+    }
+
+    .lead-rest,
+    .lead-x {
+        display: block;
+    }
+
+    .lead-more {
+        display: none;
     }
 
     .links a::after {
