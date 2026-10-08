@@ -1,5 +1,12 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/Sergio_Ambrozio_CV.pdf",
+      "destination": "/about",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/api/feed",
