@@ -98,6 +98,10 @@ async function resolveFile(pathname) {
 createServer(async function (req, res) {
     try {
         var url = new URL(req.url || "/", "http://127.0.0.1");
+        if (url.pathname === "/Sergio_Ambrozio_CV.pdf") {
+            send(res, 308, { Location: "/about", "Cache-Control": "no-store" }, "");
+            return;
+        }
         if (url.pathname === "/api/feed") {
             var feed = await serveFeed(url);
             send(res, 200, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" }, JSON.stringify(feed));

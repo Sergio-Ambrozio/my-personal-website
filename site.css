@@ -40,6 +40,7 @@ body {
 .links,
 .item-meta,
 .date,
+.employer-loc,
 .position,
 .edu-year,
 .edu-school,
@@ -441,7 +442,35 @@ html:not([data-lang="pt"]) .i18n-pt {
 .about-lead {
     font-size: 18px;
     color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.about-sub {
+    font-size: 15px;
+    color: var(--muted);
     margin-bottom: 16px;
+}
+
+.profile {
+    font-size: 17px;
+    max-width: 42rem;
+}
+
+.employer-loc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.bullets {
+    margin: 8px 0 0;
+    padding-left: 1.15rem;
+    font-size: 15px;
+    color: var(--muted);
+}
+
+.bullets li + li {
+    margin-top: 4px;
 }
 
 .cv-item {
@@ -473,6 +502,7 @@ html:not([data-lang="pt"]) .i18n-pt {
 }
 
 .date,
+.employer-loc,
 .edu-year {
     font-size: 13px;
     color: var(--muted);
