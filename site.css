@@ -669,14 +669,57 @@ html:not([data-lang="pt"]) .i18n-pt {
     }
 }
 
-.project-shot {
-    display: block;
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-    margin: 0.75rem 0 0.25rem;
+.project-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 0 0 1.5rem;
+}
+
+.project-card {
+    margin: 0;
     border: 1px solid var(--rule);
     border-radius: 14px;
-    box-shadow: 0 6px 20px var(--shadow);
     background: var(--card);
+    overflow: hidden;
+}
+
+.project-card-device {
+    display: flex;
+    justify-content: center;
+    height: 230px;
+    padding: 1.5rem 1.5rem 0;
+    overflow: hidden;
+    background: #ebe5d8;
+}
+
+.project-card-shot {
+    align-self: flex-start;
+    width: 150px;
+    height: auto;
+    border: 6px solid var(--ink);
+    border-bottom: 0;
+    border-radius: 22px 22px 0 0;
+}
+
+.project-card figcaption {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+.project-card-name {
+    margin: 0;
+    font-weight: 600;
+}
+
+.project-card-desc {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+@media (max-width: 680px) {
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
 }
