@@ -718,6 +718,27 @@ html:not([data-lang="pt"]) .i18n-pt {
     line-height: 1.45;
 }
 
+.photo-card {
+    margin: 1.5rem 0 0;
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    background: var(--card);
+    overflow: hidden;
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.photo-card figcaption {
+    padding: 0.85rem 1.1rem 1rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
 @media (max-width: 680px) {
     .project-cards {
         grid-template-columns: 1fr;
