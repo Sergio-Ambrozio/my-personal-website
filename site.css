@@ -805,3 +805,14 @@ html:not([data-lang="pt"]) .i18n-pt {
 .about-bio + .role-now {
     margin-top: 0.9rem;
 }
+
+.fact-list li.minor {
+    padding: 0.2rem 0;
+    border: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.fact-list li:not(.minor) + li.minor {
+    padding-top: 0.6rem;
+}
