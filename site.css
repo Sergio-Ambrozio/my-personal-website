@@ -718,65 +718,70 @@ html:not([data-lang="pt"]) .i18n-pt {
     line-height: 1.45;
 }
 
-.photo-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    margin: 1.5rem 0 0;
+.talk-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.7rem 0 0.3rem;
 }
 
-.photo-gallery--single {
-    grid-template-columns: 1fr;
-}
-
-.fact-list .photo-gallery {
-    margin: 1rem 0 0.5rem;
-}
-
-.photo-card {
-    margin: 0;
-    border: 1px solid var(--rule);
-    border-radius: 14px;
-    background: var(--card);
-    overflow: hidden;
-}
-
-.photo-card img {
+.talk-thumb {
     display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    line-height: 0;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.15s;
 }
 
-.photo-card--graphic img {
-    aspect-ratio: auto;
-    object-fit: contain;
+.talk-thumb:hover,
+.talk-thumb:focus-visible {
+    border-color: var(--muted);
+}
+
+.talk-thumb img {
+    display: block;
+    width: 140px;
+    height: 96px;
+    object-fit: cover;
     background: #fff;
 }
 
-.photo-card figcaption {
-    padding: 0.85rem 1.1rem 1rem;
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.45;
+.lightbox {
+    max-width: min(92vw, 1200px);
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+}
+
+.lightbox::backdrop {
+    background: rgba(28, 25, 21, 0.82);
+}
+
+.lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 86vh;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.6rem;
+    border: 0;
+    background: none;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: 680px) {
-    .photo-gallery {
-        grid-template-columns: 85% 85%;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 0.5rem;
-    }
-
-    .photo-card {
-        scroll-snap-align: start;
-    }
-
-    .photo-gallery--single {
-        grid-template-columns: 1fr;
-        overflow: visible;
+    .talk-thumb img {
+        width: 100px;
+        height: 70px;
     }
 
     .project-cards {

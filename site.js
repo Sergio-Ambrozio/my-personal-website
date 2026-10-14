@@ -209,3 +209,20 @@
     setupLead();
     loadFeed();
 })();
+
+(function () {
+    var box = document.getElementById("lightbox");
+    if (!box || typeof box.showModal !== "function") return;
+    var img = box.querySelector("img");
+    document.querySelectorAll(".talk-thumb").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            img.src = link.href;
+            img.alt = link.querySelector("img").alt;
+            box.showModal();
+        });
+    });
+    box.addEventListener("click", function (event) {
+        if (event.target === box || event.target === img) box.close();
+    });
+})();
