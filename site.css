@@ -725,6 +725,14 @@ html:not([data-lang="pt"]) .i18n-pt {
     margin: 1.5rem 0 0;
 }
 
+.photo-gallery--single {
+    grid-template-columns: 1fr;
+}
+
+.fact-list .photo-gallery {
+    margin: 1rem 0 0.5rem;
+}
+
 .photo-card {
     margin: 0;
     border: 1px solid var(--rule);
@@ -739,6 +747,12 @@ html:not([data-lang="pt"]) .i18n-pt {
     height: auto;
     aspect-ratio: 4 / 3;
     object-fit: cover;
+}
+
+.photo-card--graphic img {
+    aspect-ratio: auto;
+    object-fit: contain;
+    background: #fff;
 }
 
 .photo-card figcaption {
@@ -758,6 +772,11 @@ html:not([data-lang="pt"]) .i18n-pt {
 
     .photo-card {
         scroll-snap-align: start;
+    }
+
+    .photo-gallery--single {
+        grid-template-columns: 1fr;
+        overflow: visible;
     }
 
     .project-cards {
