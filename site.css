@@ -718,8 +718,15 @@ html:not([data-lang="pt"]) .i18n-pt {
     line-height: 1.45;
 }
 
-.photo-card {
+.photo-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
     margin: 1.5rem 0 0;
+}
+
+.photo-card {
+    margin: 0;
     border: 1px solid var(--rule);
     border-radius: 14px;
     background: var(--card);
@@ -730,6 +737,8 @@ html:not([data-lang="pt"]) .i18n-pt {
     display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
 
 .photo-card figcaption {
@@ -740,6 +749,17 @@ html:not([data-lang="pt"]) .i18n-pt {
 }
 
 @media (max-width: 680px) {
+    .photo-gallery {
+        grid-template-columns: 85% 85%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 0.5rem;
+    }
+
+    .photo-card {
+        scroll-snap-align: start;
+    }
+
     .project-cards {
         grid-template-columns: 1fr;
     }
