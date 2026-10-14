@@ -671,9 +671,9 @@ html:not([data-lang="pt"]) .i18n-pt {
 
 .project-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    margin: 0 0 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0 0 1rem;
 }
 
 .project-card {
@@ -709,6 +709,19 @@ html:not([data-lang="pt"]) .i18n-pt {
 .project-card-name {
     margin: 0;
     font-weight: 600;
+}
+
+.project-card-name a {
+    color: inherit;
+}
+
+.see-all {
+    margin: 0;
+    font-size: 0.92rem;
+}
+
+.see-all a {
+    color: var(--muted);
 }
 
 .project-card-desc {
@@ -787,4 +800,8 @@ html:not([data-lang="pt"]) .i18n-pt {
     .project-cards {
         grid-template-columns: 1fr;
     }
+}
+
+.about-bio + .role-now {
+    margin-top: 0.9rem;
 }
