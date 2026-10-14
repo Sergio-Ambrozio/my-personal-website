@@ -807,7 +807,8 @@ html:not([data-lang="pt"]) .i18n-pt {
 }
 
 /* Home */
-.home-hero { margin-bottom: 36px; }
+.home-hero { margin-bottom: 40px; }
+.home-hero + .section { margin-top: 0; }
 .home-title { margin: 0; font-size: 34px; line-height: 1.15; letter-spacing: -0.01em; }
 .home-tagline { margin: 12px 0 0; font-size: 19px; line-height: 1.45; color: var(--muted); max-width: 34rem; }
 .proof { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
