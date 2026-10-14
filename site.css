@@ -805,3 +805,25 @@ html:not([data-lang="pt"]) .i18n-pt {
 .about-bio + .role-now {
     margin-top: 0.9rem;
 }
+
+/* Home */
+.home-hero { margin-bottom: 36px; }
+.home-title { margin: 0; font-size: 34px; line-height: 1.15; letter-spacing: -0.01em; }
+.home-tagline { margin: 12px 0 0; font-size: 19px; line-height: 1.45; color: var(--muted); max-width: 34rem; }
+.proof { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.proof li { border-top: 1px solid var(--rule); padding-top: 12px; }
+.proof-num { margin: 0; font-size: 24px; font-weight: 600; white-space: nowrap; }
+.proof-label { margin: 6px 0 0; font-size: 14px; line-height: 1.4; color: var(--muted); }
+.case { margin: 0; display: grid; grid-template-columns: 6rem 1fr; gap: 8px 16px; font-size: 16px; line-height: 1.45; }
+.case dt { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; padding-top: 3px; }
+.case dd { margin: 0; }
+.talk-hook { margin: 0 0 6px; font-size: 22px; font-style: italic; }
+.credentials { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.6; }
+.home-cta { margin: 0; font-size: 17px; }
+.home-cta a { color: var(--link); }
+@media (max-width: 680px) {
+    .home-title { font-size: 27px; }
+    .proof { grid-template-columns: 1fr; }
+    .case { grid-template-columns: 1fr; gap: 2px; }
+    .case dd { margin-bottom: 8px; }
+}

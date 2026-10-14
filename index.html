@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt" data-lang="pt" data-title-en="Sergio Ambrozio" data-title-pt="Sergio Ambrozio" data-desc-en="AI hype from the US. What dies in a real company. For people who run IT in Brazil." data-desc-pt="Hype de IA nos EUA. O que morre numa empresa de verdade. Pra quem decide TI no Brasil.">
+<html lang="en" data-lang="en" data-title-en="Sergio Ambrozio" data-title-pt="Sergio Ambrozio" data-desc-en="CIO · Applied AI in Production. Turning AI from pilots into accountable production systems that change how the business runs." data-desc-pt="CIO · IA aplicada em produção. Levo IA do piloto para sistemas em produção, com dono e resultado de negócio.">
 <head>
     <script>
         (function () {
-            var lang = "pt";
+            var lang = "en";
             try {
                 var stored = localStorage.getItem("site-lang");
                 if (stored === "pt" || stored === "en") lang = stored;
@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergio Ambrozio</title>
-    <meta name="description" content="Hype de IA nos EUA. O que morre numa empresa de verdade. Pra quem decide TI no Brasil.">
+    <meta name="description" content="CIO · Applied AI in Production. Turning AI from pilots into accountable production systems that change how the business runs.">
 
     <link rel="canonical" href="https://sergioambrozio.ai/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -23,7 +23,7 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta property="og:title" content="Sergio Ambrozio">
-    <meta property="og:description" content="Hype de IA nos EUA. O que morre numa empresa de verdade. Pra quem decide TI no Brasil.">
+    <meta property="og:description" content="CIO · Applied AI in Production. Turning AI from pilots into accountable production systems that change how the business runs.">
     <meta property="og:image" content="https://sergioambrozio.ai/sergio-photo.jpg">
     <meta property="og:url" content="https://sergioambrozio.ai/">
     <meta property="og:type" content="website">
@@ -62,109 +62,91 @@
     }
     </script>
 
-    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="/site.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link"><span class="i18n-en">Skip to main content</span><span class="i18n-pt">Ir para o conteúdo</span></a>
     <div class="wrap">
         <header class="masthead">
             <a class="brand" href="/">
-                <span class="brand-mark">Pauta</span>
-                <span class="brand-line">
-                    <span class="i18n-en">what moved this week, filtered for people who run IT</span>
-                    <span class="i18n-pt">o que moveu esta semana, filtrado pra quem roda TI</span>
-                </span>
+                <span class="brand-mark">Sergio Ambrozio</span>
+                <span class="brand-line">Basel 🇨🇭</span>
             </a>
             <div class="masthead-tools">
                 <nav class="nav-links" aria-label="Site">
                     <a href="/about"><span class="i18n-en">About</span><span class="i18n-pt">Sobre</span></a>
+                    <a href="/pauta">Pauta</a>
                 </nav>
                 <nav class="lang-switch" aria-label="Idioma">
-                    <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+                    <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
                     <span aria-hidden="true">|</span>
-                    <button type="button" data-set-lang="pt" aria-pressed="true">PT</button>
+                    <button type="button" data-set-lang="pt" aria-pressed="false">PT</button>
                 </nav>
             </div>
         </header>
 
         <main id="main-content">
-            <article class="lead" data-lead>
-                <h1 class="lead-title">
-                    <span class="i18n-en">A letter is not a control</span>
-                    <span class="i18n-pt">Carta não é controle</span>
-                </h1>
-                <p class="lead-dek">
-                    <span class="i18n-en">Asking on paper is not having it in your company.</span>
-                    <span class="i18n-pt">Pedir no papel não é ter na sua empresa.</span>
+            <section class="home-hero">
+                <h1 class="home-title"><span class="i18n-en">CIO · Applied AI in Production</span><span class="i18n-pt">CIO · IA aplicada em produção</span></h1>
+                <p class="home-tagline">
+                    <span class="i18n-en">Turning AI from pilots into accountable production systems that change how the business runs.</span>
+                    <span class="i18n-pt">Levo IA do piloto para sistemas em produção, com dono e resultado de negócio.</span>
                 </p>
-                <p class="lead-date">
-                    <time datetime="2026-08-30"><span class="i18n-en">30 Aug 2026</span><span class="i18n-pt">30 ago 2026</span></time>
-                </p>
+            </section>
 
-                <div class="lead-body">
-                    <p class="i18n-pt">Um dia depois do relatório, a OpenAI pediu por escrito que cada agente tenha nome e conta próprios. Pedir no papel não é ter na sua empresa. O fornecedor mostra quem é o agente, o que ele pode mexer, e como você desliga? Se não mostra, a carta não vale.</p>
-                    <p class="i18n-en">The day after the report, OpenAI asked in writing that every agent have its own name and account. Asking on paper is not having it in your company. Does the vendor show who the agent is, what it can touch, and how you shut it off? If they don't show it, the letter doesn't count.</p>
-
-                    <div id="carta" class="lead-rest">
-                        <p class="i18n-pt">Na Hugging Face, uma senha compartilhada deu acesso de dono a dois ambientes de produção. Não foi um ataque sofisticado. Foi a mesma conta usada em tudo.</p>
-                        <p class="i18n-en">At Hugging Face, one shared password gave owner access to two production environments. It wasn't a sophisticated attack. It was the same account used everywhere.</p>
-
-                        <p class="i18n-pt">O desligar deles, no próprio relatório, é assim: alerta grave, 30 minutos. Se não for alarme falso, param o processo. Não é o botão de parar o chat. Fazer isso sozinho, sem gente, ainda é plano, não realidade.</p>
-                        <p class="i18n-en">Their shutdown, in their own report, works like this: serious alert, 30 minutes. If it isn't a false alarm, they stop the process. That is not the chat stop button. Doing it without people is still a plan, not reality.</p>
-
-                        <p class="i18n-pt">Segunda-feira, três perguntas no contrato. O agente tem conta própria ou usa a senha do sistema? Dá pra impedir ele de gravar, instalar e sair na internet? Se der problema, em 30 minutos você corta o acesso de verdade, ou só para o chat? Escritório em São Paulo não muda o risco.</p>
-                        <p class="i18n-en">Monday, three questions in the contract. Does the agent have its own account, or does it use the system password? Can you stop it from writing, installing, and going out to the internet? If something goes wrong, in 30 minutes do you actually cut access, or only stop the chat? An office in São Paulo does not change the risk.</p>
-                    </div>
-                </div>
-
-                <p class="lead-more">
-                    <a href="#carta" data-expand-lead aria-expanded="false">
-                        <span class="i18n-en">Continue reading →</span>
-                        <span class="i18n-pt">Continuar lendo →</span>
-                    </a>
-                </p>
-
-                <p class="lead-x">
-                    <a href="https://x.com/s_ambrozio/status/2093980260459037026" target="_blank" rel="noopener noreferrer">
-                        <span class="i18n-en">Also on X</span>
-                        <span class="i18n-pt">Também no X</span>
-                    </a>
-                </p>
-            </article>
-
-            <section class="section section-feed" aria-labelledby="recent-posts" data-feed>
-                <h2 class="section-title" id="recent-posts"><span class="i18n-en">Recent</span><span class="i18n-pt">Recente</span></h2>
-                <ol class="posts" data-feed-list aria-live="polite">
+            <section class="section">
+                <ul class="proof">
                     <li>
-                        <p class="feed-status">
-                            <span class="i18n-en">Loading posts…</span>
-                            <span class="i18n-pt">Carregando posts…</span>
-                        </p>
+                        <p class="proof-num">48,000 → 4,000</p>
+                        <p class="proof-label"><span class="i18n-en">planning hours, with agentic AI in production at Syngenta</span><span class="i18n-pt">horas de planejamento, com IA agêntica em produção na Syngenta</span></p>
                     </li>
-                </ol>
-                <p class="section-note">
-                    <span class="i18n-en">More at </span>
-                    <span class="i18n-pt">Mais em </span>
-                    <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer">@s_ambrozio</a>
+                    <li>
+                        <p class="proof-num">~USD 700M</p>
+                        <p class="proof-label"><span class="i18n-en">region I run IT for: Japan &amp; ANZ</span><span class="i18n-pt">região cuja TI eu lidero: Japan &amp; ANZ</span></p>
+                    </li>
+                    <li>
+                        <p class="proof-num"><span class="i18n-en">7 / ~50</span><span class="i18n-pt">7 / ~50</span></p>
+                        <p class="proof-label"><span class="i18n-en">direct / indirect, across AI engineering, data science and data engineering</span><span class="i18n-pt">diretos / indiretos, em engenharia de IA, ciência de dados e engenharia de dados</span></p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><span class="i18n-en">Featured case · Forecast Factory, Syngenta</span><span class="i18n-pt">Caso em destaque · Forecast Factory, Syngenta</span></h2>
+                <dl class="case">
+                    <dt><span class="i18n-en">Problem</span><span class="i18n-pt">Problema</span></dt>
+                    <dd><span class="i18n-en">Building the 5-year plan took 48,000 hours of people's time.</span><span class="i18n-pt">Montar o plano de 5 anos consumia 48.000 horas de trabalho das pessoas.</span></dd>
+                    <dt><span class="i18n-en">What</span><span class="i18n-pt">O quê</span></dt>
+                    <dd><span class="i18n-en">We changed how the plan gets made, with agentic AI running in production.</span><span class="i18n-pt">Mudamos a forma como o plano é feito, com IA agêntica rodando em produção.</span></dd>
+                    <dt><span class="i18n-en">Result</span><span class="i18n-pt">Resultado</span></dt>
+                    <dd><span class="i18n-en">4,000 hours instead of 48,000, and $4.4M saved.</span><span class="i18n-pt">4.000 horas em vez de 48.000, e $4,4M economizados.</span></dd>
+                </dl>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><span class="i18n-en">Talk</span><span class="i18n-pt">Palestra</span></h2>
+                <p class="talk-hook"><span class="i18n-en">Who owns your AI agents?</span><span class="i18n-pt">Quem é o dono dos seus agentes de IA?</span></p>
+                <p class="see-all"><a href="/about#talks"><span class="i18n-en">Talks &amp; publications →</span><span class="i18n-pt">Palestras e publicações →</span></a></p>
+            </section>
+
+            <section class="section">
+                <p class="credentials">ETH Zürich · MIT Sloan &amp; McKinsey · Springer / Palgrave <span class="i18n-en">publication</span><span class="i18n-pt">publicação</span> · <span class="i18n-en">Speaker, Richmond IT Forum</span><span class="i18n-pt">Palestrante, Richmond IT Forum</span> · FHNW</p>
+            </section>
+
+            <section class="section">
+                <p class="home-cta">
+                    <span class="i18n-en">Get in touch: </span><span class="i18n-pt">Fale comigo: </span><a href="mailto:sergio@sergioambrozio.ai">sergio@sergioambrozio.ai</a>
                 </p>
-                <noscript>
-                    <p class="feed-status">
-                        <span class="i18n-en">Posts go out on X. Open </span>
-                        <span class="i18n-pt">Os posts saem no X. Abra </span>
-                        <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer">@s_ambrozio</a>.
-                    </p>
-                </noscript>
             </section>
         </main>
 
         <footer class="footer">
-            <p class="footer-identity">Technology Leader | Applied AI in Production. Basel 🇨🇭.</p>
+            <p class="footer-identity">CIO · Applied AI in Production. Basel 🇨🇭.</p>
             <p class="links">
                 <a href="mailto:sergio@sergioambrozio.ai">sergio@sergioambrozio.ai</a>
-                <a href="https://x.com/s_ambrozio" target="_blank" rel="noopener noreferrer">@s_ambrozio</a>
             </p>
         </footer>
     </div>
-    <script src="site.js"></script>
+    <script src="/site.js"></script>
 </body>
 </html>
