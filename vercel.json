@@ -2,8 +2,28 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/pauta",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/pauta/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/about/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/Sergio_Ambrozio_CV.pdf",
-      "destination": "/about",
+      "destination": "/",
       "permanent": true
     }
   ],
